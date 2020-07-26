@@ -28,3 +28,6 @@ let g:airline#extensions#tabline#show_splits = 0
 
 " show path for files
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+" enable webdevicons for airline
+let g:webdevicons_enable_airline_tabline = 1
