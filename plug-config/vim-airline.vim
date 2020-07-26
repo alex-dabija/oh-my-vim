@@ -31,3 +31,4 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " enable webdevicons for airline
 let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1

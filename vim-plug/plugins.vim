@@ -1,4 +1,5 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
+  Plug 'ryanoasis/vim-devicons'
   Plug 'vim-airline/vim-airline'
 call plug#end()
 
