@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'vim-airline/vim-airline'
 
   Plug 'unblevable/quick-scope'
+  Plug 'dracula/vim', { 'as': 'dracula' }
 
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}

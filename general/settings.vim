@@ -29,7 +29,7 @@ autocmd FileType java setlocal shiftwidth=4
 " configure default theme
 " colorscheme base16-default-dark
 " set background=dark
-" colorscheme dracula
+colorscheme dracula
 
 " display column limit
 set colorcolumn=120
