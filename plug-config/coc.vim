@@ -162,3 +162,25 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+let g:coc_explorer_global_presets = {
+  \  'floating': {
+  \    'position': 'floating',
+  \  },
+  \  'floatingLeftside': {
+  \    'position': 'floating',
+  \    'floating-position': 'left-center',
+  \    'floating-width': 30,
+  \  },
+  \  'floatingRightside': {
+  \    'position': 'floating',
+  \    'floating-position': 'right-center',
+  \    'floating-width': 30,
+  \  },
+  \  'simplify': {
+  \    'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+  \  }
+  \ }
+
+nnoremap <silent> <leader>ee :CocCommand explorer<CR>
+nnoremap <silent> <leader>ef :CocCommand explorer --preset floating<CR>
