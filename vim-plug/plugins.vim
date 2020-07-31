@@ -9,6 +9,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
   Plug 'airblade/vim-rooter'
+
+  " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
 call plug#end()
 
 autocmd VimEnter *
