@@ -1,0 +1,7 @@
+session_name: oh-my-vim
+start_directory: ./
+windows:
+  - panes:
+      - null
+  - panes:
+      - null
