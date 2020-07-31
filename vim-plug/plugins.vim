@@ -7,6 +7,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
+  Plug 'airblade/vim-rooter'
 call plug#end()
 
 autocmd VimEnter *
