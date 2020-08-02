@@ -8,5 +8,6 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 
 " key mappings
+source $HOME/.config/nvim/keys/fzf.vim
 source $HOME/.config/nvim/keys/coc-fzf.vim
 source $HOME/.config/nvim/keys/which-key.vim
