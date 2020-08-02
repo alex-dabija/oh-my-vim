@@ -25,3 +25,6 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+nnoremap <leader>fr :Files<CR>
+nnoremap <leader>fr :Buffers<CR>
