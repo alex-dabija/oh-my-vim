@@ -27,4 +27,4 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 nnoremap <leader>fr :Files<CR>
-nnoremap <leader>fr :Buffers<CR>
+nnoremap <leader>fb :Buffers<CR>
