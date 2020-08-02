@@ -8,4 +8,4 @@ let g:fzf_buffers_jump = 1
 let g:fzf_layout = {'window': { 'width': 0.9, 'height': 0.9,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-let $FZF_DEFAULT_COMMAND = "rg --files --hidden"
+let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/**'"
