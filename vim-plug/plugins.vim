@@ -15,6 +15,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'junegunn/fzf.vim'
 
   Plug 'liuchengxu/vim-which-key'
+  Plug 'liuchengxu/vista.vim'
 call plug#end()
 
 autocmd VimEnter *
