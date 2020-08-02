@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'antoinemadec/coc-fzf'
 
   Plug 'airblade/vim-rooter'
+  Plug 'tpope/vim-commentary'
 
   " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
