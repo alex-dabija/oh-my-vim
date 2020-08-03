@@ -17,6 +17,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   Plug 'liuchengxu/vim-which-key'
   Plug 'liuchengxu/vista.vim'
+
+  Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 autocmd VimEnter *
