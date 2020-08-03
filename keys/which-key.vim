@@ -2,6 +2,9 @@
 nnoremap <silent> <leader> :silent <C-u> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <C-u> :silent WhichKeyVisual '<Space>'<CR>
 
+nnoremap <silent> ] :silent <C-u> :silent WhichKey ']'<CR>
+nnoremap <silent> [ :silent <C-u> :silent WhichKey '['<CR>
+
 let g:which_key_map = {}
 
 let g:which_key_sep = ''
@@ -22,4 +25,10 @@ let g:which_key_map.t.g.s = [ ':GitGutterSignsToggle', 'git-gutter-signs' ]
 let g:which_key_map.t.g.h = [ ':GitGutterLineHighlightsToggle', 'git-gutter-highlight' ]
 let g:which_key_map.t.g.n = [ ':GitGutterLineNrHighlightsToggle', 'git-gutter-number-hightlight' ]
 
-call which_key#register('<Space>', "g:which_key_map")
+call which_key#register('<Space>', 'g:which_key_map')
+
+" let g:which_key_map_square_close = {}
+
+" let g:which_key_map_x.c = [ ':GitGutterNextHunk', 'GitGutterNextHunk' ]
+
+" call which_key#register(']', 'g:which_key_map_x')
