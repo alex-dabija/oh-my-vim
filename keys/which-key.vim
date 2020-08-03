@@ -27,9 +27,3 @@ let g:which_key_map.t.g.h = [ ':GitGutterLineHighlightsToggle', 'git-gutter-high
 let g:which_key_map.t.g.n = [ ':GitGutterLineNrHighlightsToggle', 'git-gutter-number-hightlight' ]
 
 call which_key#register('<Space>', 'g:which_key_map')
-
-" let g:which_key_map_square_close = {}
-
-" let g:which_key_map_x.c = [ ':GitGutterNextHunk', 'GitGutterNextHunk' ]
-
-" call which_key#register(']', 'g:which_key_map_x')
