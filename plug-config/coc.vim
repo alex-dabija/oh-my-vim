@@ -6,6 +6,7 @@ let g:coc_global_extensions = [
   \ 'coc-yaml',
   \ 'coc-vimlsp',
   \ 'coc-explorer',
+  \ 'coc-rls',
   \ ]
 
 
