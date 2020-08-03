@@ -13,4 +13,13 @@ let g:which_key_map.f.b = [ ':Buffers', 'buffers' ]
 let g:which_key_map.f.d = [ ':CocFzfList diagnostics', 'diagnostics' ]
 let g:which_key_map.f.o = [ ':CocFzfList outline', 'outline' ]
 
+
+let g:which_key_map.t = { 'name': '+toggle' }
+let g:which_key_map.t.g = { 'name': '+git' }
+let g:which_key_map.t.g.a = [ ':GitGutterToggle', 'git-gutter' ]
+let g:which_key_map.t.g.b = [ ':GitGutterBufferToggle', 'git-gutter-buffer' ]
+let g:which_key_map.t.g.s = [ ':GitGutterSignsToggle', 'git-gutter-signs' ]
+let g:which_key_map.t.g.h = [ ':GitGutterLineHighlightsToggle', 'git-gutter-highlight' ]
+let g:which_key_map.t.g.n = [ ':GitGutterLineNrHighlightsToggle', 'git-gutter-number-hightlight' ]
+
 call which_key#register('<Space>', "g:which_key_map")
