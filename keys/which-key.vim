@@ -4,6 +4,7 @@ vnoremap <silent> <leader> :silent <C-u> :silent WhichKeyVisual '<Space>'<CR>
 
 nnoremap <silent> ] :silent <C-u> :silent WhichKey ']'<CR>
 nnoremap <silent> [ :silent <C-u> :silent WhichKey '['<CR>
+nnoremap <silent> g :silent <C-u> :silent WhichKey 'g'<CR>
 
 let g:which_key_map = {}
 
