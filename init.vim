@@ -10,6 +10,7 @@ source $HOME/.config/nvim/plug-config/gutter.vim
 source $HOME/.config/nvim/plug-config/vista.vim
 
 " key mappings
+source $HOME/.config/nvim/keys/general.vim
 source $HOME/.config/nvim/keys/fzf.vim
 source $HOME/.config/nvim/keys/coc-fzf.vim
 source $HOME/.config/nvim/keys/gutter.vim
