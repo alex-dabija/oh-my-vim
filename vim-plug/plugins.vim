@@ -18,6 +18,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'airblade/vim-gitgutter'
 
   " Plug 'fatih/vim-go'
+  Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 autocmd VimEnter *
