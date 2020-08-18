@@ -8,6 +8,7 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/gutter.vim
 source $HOME/.config/nvim/plug-config/vista.vim
+source $HOME/.config/nvim/plug-config/go.vim
 
 " key mappings
 source $HOME/.config/nvim/keys/general.vim
