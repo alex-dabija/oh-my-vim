@@ -1,24 +1,24 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
-  Plug 'ryanoasis/vim-devicons'
-  Plug 'vim-airline/vim-airline'
+  Plug 'git@git.tools.kbee.xyz:opensource/vim/vim-devicons.git'
+  Plug 'git@git.tools.kbee.xyz:opensource/vim/vim-airline.git'
 
-  Plug 'unblevable/quick-scope'
-  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'git@git.tools.kbee.xyz:opensource/vim/quick-scope.git'
+  Plug 'git@git.tools.kbee.xyz:opensource/vim/dracula-vim-theme.git', { 'as': 'dracula' }
 
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'antoinemadec/coc-fzf'
+  Plug 'git@git.tools.kbee.xyz:opensource/vim/coc-nvim.git', {'branch': 'release'}
+  Plug 'git@git.tools.kbee.xyz:opensource/vim/coc-fzf.git'
 
-  Plug 'airblade/vim-rooter'
-  Plug 'tpope/vim-commentary'
+  Plug 'git@git.tools.kbee.xyz:opensource/vim/vim-rooter.git'
+  Plug 'git@git.tools.kbee.xyz:opensource/vim/vim-commentary.git'
 
-  Plug 'junegunn/fzf.vim'
+  Plug 'git@git.tools.kbee.xyz:opensource/vim/fzf-vim.git'
 
-  Plug 'liuchengxu/vista.vim'
+  Plug 'git@git.tools.kbee.xyz:opensource/vim/vista-vim.git'
 
-  Plug 'airblade/vim-gitgutter'
+  Plug 'git@git.tools.kbee.xyz:opensource/vim/vim-gitgutter.git'
 
-  " Plug 'fatih/vim-go'
-  Plug 'sheerun/vim-polyglot'
+  " Plug 'git@git.tools.kbee.xyz:opensource/vim/vim-go.git'
+  Plug 'git@git.tools.kbee.xyz:opensource/vim/vim-polyglot.git'
 call plug#end()
 
 autocmd VimEnter *
