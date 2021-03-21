@@ -10,7 +10,7 @@ utils.set('hidden', true)
 utils.set('termguicolors', true)
 
 -- display cursor line and column when no status line is defined
-vim.o.ruler = true
+utils.set('ruler', true)
 
 -- minimal number of screen lines to keep above and below the cursor
 vim.o.scrolloff = 8
