@@ -10,4 +10,7 @@ end
 
 return require('packer').startup(function(use)
   use {'wbthomason/packer.nvim'}
+
+  -- Colorschemes
+  use {'dracula/vim', as = 'dracula', run = ':colorscheme dracula'}
 end)
