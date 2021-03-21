@@ -16,6 +16,9 @@ local options = {
   ['lazyredraw']     = {  true, false, false },
   ['fileencoding']   = {  true, false, false },
   ['termguicolors']  = {  true, false, false },
+  ['expandtab']      = {  true,  true, false },
+  ['tabstop']        = {  true,  true, false },
+  ['shiftwidth']     = {  true,  true, false },
 }
 
 M.set = function(option, value)

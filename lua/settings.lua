@@ -31,3 +31,8 @@ utils.set('lazyredraw', true)
 -- enable list mode to display special characters
 utils.set('list', true)
 utils.set('listchars', 'tab:▸ ,eol:¬,extends:»,precedes:«,trail:•')
+
+-- general tab behaviour
+utils.set('expandtab', true)
+utils.set('tabstop', 2)
+utils.set('shiftwidth', 2)
