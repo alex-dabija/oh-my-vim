@@ -36,3 +36,13 @@ utils.set('listchars', 'tab:▸ ,eol:¬,extends:»,precedes:«,trail:•')
 utils.set('expandtab', true)
 utils.set('tabstop', 2)
 utils.set('shiftwidth', 2)
+
+-- TODO: replace with native feature after PR is merged: https://github.com/neovim/neovim/pull/12378
+vim.api.nvim_exec([[
+  augroup ft_gitconfig
+    autocmd!
+    autocmd FileType gitconfig setlocal noexpandtab
+    autocmd FileType gitconfig setlocal tabstop=4
+    autocmd FileType gitconfig setlocal shiftwidth=4
+  augroup END
+]], false)
