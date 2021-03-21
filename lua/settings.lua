@@ -16,7 +16,7 @@ utils.set('ruler', true)
 utils.set('scrolloff', 8)
 
 -- don't redraw screen when executing macros
-vim.o.lazyredraw = true
+utils.set('lazyredraw', true)
 
 -- enable list mode to display special characters
 utils.set('list', true)
