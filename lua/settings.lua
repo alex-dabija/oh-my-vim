@@ -12,6 +12,10 @@ utils.set('termguicolors', true)
 -- display cursor line and column when no status line is defined
 utils.set('ruler', true)
 
+-- display line numbers
+utils.set('number', true)
+utils.set('relativenumber', true)
+
 -- minimal number of screen lines to keep above and below the cursor
 utils.set('scrolloff', 8)
 

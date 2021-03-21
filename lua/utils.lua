@@ -4,14 +4,16 @@ local V = vim.api
 
 -- option classification based on type: global, buffer, window
 local options = {
-  ['list']          = {  true, false,  true },
-  ['listchars']     = {  true, false, false },
-  ['ruler']         = {  true, false, false },
-  ['hidden']        = {  true, false, false },
-  ['scrolloff']     = {  true, false, false },
-  ['lazyredraw']    = {  true, false, false },
-  ['fileencoding']  = {  true, false, false },
-  ['termguicolors'] = {  true, false, false },
+  ['list']           = {  true, false,  true },
+  ['listchars']      = {  true, false, false },
+  ['ruler']          = {  true, false, false },
+  ['number']         = {  true, false,  true },
+  ['relativenumber'] = {  true, false,  true },
+  ['hidden']         = {  true, false, false },
+  ['scrolloff']      = {  true, false, false },
+  ['lazyredraw']     = {  true, false, false },
+  ['fileencoding']   = {  true, false, false },
+  ['termguicolors']  = {  true, false, false },
 }
 
 M.set = function(option, value)
