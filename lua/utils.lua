@@ -4,7 +4,8 @@ local V = vim.api
 
 -- option classification based on type: global, buffer, window
 local options = {
-  ['list'] = {true, false, true}
+  ['list']         = {  true, false,  true }
+  ['fileencoding'] = {  true, false, false }
 }
 
 M.set = function(option, value)

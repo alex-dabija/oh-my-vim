@@ -1,7 +1,7 @@
 local utils = require('utils')
 
 -- make sure file encoding is utf-8
-vim.o.fileencoding = 'utf-8'
+utils.set('fileencoding', 'utf-8')
 
 -- keep buffers open when not displayed
 vim.o.hidden = true
