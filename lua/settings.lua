@@ -12,3 +12,6 @@ vim.o.ruler = true
 
 -- minimal number of screen lines to keep above and below the cursor
 vim.o.scrolloff = 8
+
+-- don't redraw screen when executing macros
+vim.o.lazyredraw = true
