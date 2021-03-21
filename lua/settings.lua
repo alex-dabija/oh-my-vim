@@ -19,6 +19,9 @@ utils.set('relativenumber', true)
 -- display line limit column
 utils.set('colorcolumn', '120')
 
+-- always display sign column
+utils.set('signcolumn', 'yes')
+
 -- minimal number of screen lines to keep above and below the cursor
 utils.set('scrolloff', 8)
 

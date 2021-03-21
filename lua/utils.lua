@@ -10,6 +10,7 @@ local options = {
   ['number']         = {  true, false,  true },
   ['relativenumber'] = {  true, false,  true },
   ['colorcolumn']    = {  true, false,  true },
+  ['signcolumn']     = {  true, false,  true },
   ['hidden']         = {  true, false, false },
   ['scrolloff']      = {  true, false, false },
   ['lazyredraw']     = {  true, false, false },
