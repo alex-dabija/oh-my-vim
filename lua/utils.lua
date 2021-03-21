@@ -4,9 +4,10 @@ local V = vim.api
 
 -- option classification based on type: global, buffer, window
 local options = {
-  ['list']         = {  true, false,  true },
-  ['hidden']       = {  true, false, false },
-  ['fileencoding'] = {  true, false, false },
+  ['list']          = {  true, false,  true },
+  ['hidden']        = {  true, false, false },
+  ['fileencoding']  = {  true, false, false },
+  ['termguicolors'] = {  true, false, false },
 }
 
 M.set = function(option, value)

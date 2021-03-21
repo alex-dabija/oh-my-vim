@@ -7,7 +7,7 @@ utils.set('fileencoding', 'utf-8')
 utils.set('hidden', true)
 
 -- enable 24-bit colors
-vim.o.termguicolors = true
+utils.set('termguicolors', true)
 
 -- display cursor line and column when no status line is defined
 vim.o.ruler = true
