@@ -1,3 +1,5 @@
+local utils = require('utils')
+
 -- make sure file encoding is utf-8
 vim.o.fileencoding = 'utf-8'
 
@@ -15,3 +17,6 @@ vim.o.scrolloff = 8
 
 -- don't redraw screen when executing macros
 vim.o.lazyredraw = true
+
+-- enable list mode to display special characters
+utils.set('list', true)
