@@ -1,3 +1,4 @@
+-- make sure file encoding is utf-8
 vim.o.fileencoding = 'utf-8'
 
 -- keep buffers open when not displayed
