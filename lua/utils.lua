@@ -5,6 +5,7 @@ local V = vim.api
 -- option classification based on type: global, buffer, window
 local options = {
   ['list']          = {  true, false,  true },
+  ['listchars']     = {  true, false, false },
   ['ruler']         = {  true, false, false },
   ['hidden']        = {  true, false, false },
   ['scrolloff']     = {  true, false, false },

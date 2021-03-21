@@ -20,3 +20,4 @@ utils.set('lazyredraw', true)
 
 -- enable list mode to display special characters
 utils.set('list', true)
+utils.set('listchars', 'tab:▸ ,eol:¬,extends:»,precedes:«,trail:•')
