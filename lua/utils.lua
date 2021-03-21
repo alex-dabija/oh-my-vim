@@ -9,6 +9,7 @@ local options = {
   ['ruler']          = {  true, false, false },
   ['number']         = {  true, false,  true },
   ['relativenumber'] = {  true, false,  true },
+  ['colorcolumn']    = {  true, false,  true },
   ['hidden']         = {  true, false, false },
   ['scrolloff']      = {  true, false, false },
   ['lazyredraw']     = {  true, false, false },
