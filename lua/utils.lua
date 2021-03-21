@@ -7,6 +7,7 @@ local options = {
   ['list']          = {  true, false,  true },
   ['ruler']         = {  true, false, false },
   ['hidden']        = {  true, false, false },
+  ['scrolloff']     = {  true, false, false },
   ['fileencoding']  = {  true, false, false },
   ['termguicolors'] = {  true, false, false },
 }

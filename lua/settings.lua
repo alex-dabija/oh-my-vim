@@ -13,7 +13,7 @@ utils.set('termguicolors', true)
 utils.set('ruler', true)
 
 -- minimal number of screen lines to keep above and below the cursor
-vim.o.scrolloff = 8
+utils.set('scrolloff', 8)
 
 -- don't redraw screen when executing macros
 vim.o.lazyredraw = true
