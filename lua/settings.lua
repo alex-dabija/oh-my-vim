@@ -1,7 +1,5 @@
 local utils = require('utils')
 
-vim.g.mapleader = ','
-
 -- make sure file encoding is utf-8
 utils.set('fileencoding', 'utf-8')
 
