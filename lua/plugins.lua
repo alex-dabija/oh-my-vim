@@ -20,7 +20,11 @@ packer.startup(function(use)
   }
 
   -- Colorschemes
-  use {'dracula/vim', as = 'dracula', config = function() require('utils').set_colorscheme('dracula') end}
+  use {
+    'dracula/vim',
+    as = 'dracula',
+    config = function() require('utils').set_colorscheme('dracula') end
+  }
 end)
 
 
