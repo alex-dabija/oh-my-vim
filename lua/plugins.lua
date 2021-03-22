@@ -12,6 +12,9 @@ local packer = require('packer')
 packer.startup(function(use)
   use {'wbthomason/packer.nvim'}
 
+  -- Treesitter
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+
   -- Colorschemes
   use {'dracula/vim', as = 'dracula', config = function() require('utils').set_colorscheme('dracula') end}
 end)
