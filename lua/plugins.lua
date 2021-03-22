@@ -18,6 +18,7 @@ packer.startup(function(use)
     run = ':TSUpdate',
     config = function() require('plugins.treesitter').setup() end
   }
+  use {'nvim-treesitter/nvim-treesitter-refactor'}
   use {'nvim-treesitter/playground'}
 
   -- Telescope

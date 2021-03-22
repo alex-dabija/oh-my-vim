@@ -12,6 +12,17 @@ function M.setup()
       updatetime = 25,
       persist_queries = false, -- do not persist queries across vim sessions
     },
+    refactor = {
+      highlight_definitions = {
+        enable = true
+      },
+      smart_rename = {
+        enable = true,
+        keymaps = {
+          smart_rename = "grr",
+        },
+      },
+    },
   }
 end
 
