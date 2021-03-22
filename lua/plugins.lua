@@ -41,6 +41,11 @@ packer.startup(function(use)
     'christianchiarulli/nvcode-color-schemes.vim',
     config = function() require('utils').set_colorscheme('dracula') end
   }
+
+  use {
+    'kyazdani42/nvim-tree.lua',
+    config = function() require('plugins.nvimtree').setup() end
+  }
 end)
 
 
