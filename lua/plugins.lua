@@ -20,6 +20,17 @@ packer.startup(function(use)
   }
   use {'nvim-treesitter/playground'}
 
+  -- Telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      {'nvim-lua/popup.nvim'},
+      {'nvim-lua/plenary.nvim'},
+      {'kyazdani42/nvim-web-devicons'}
+    },
+    config = function() require('plugins.telescope').setup() end
+  }
+
   -- Colorschemes
   -- use {
   --   'dracula/vim',
