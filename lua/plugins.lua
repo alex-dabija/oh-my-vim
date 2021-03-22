@@ -12,6 +12,9 @@ local packer = require('packer')
 packer.startup(function(use)
   use {'wbthomason/packer.nvim'}
 
+  -- LSP
+  use {'neovim/nvim-lspconfig'}
+
   -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
