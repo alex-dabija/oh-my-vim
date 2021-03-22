@@ -6,6 +6,12 @@ M.setup = function()
     highlight = {
       enable = true,
     },
+    playground = {
+      enable = true,
+      disable = {},
+      updatetime = 25,
+      persist_queries = false, -- do not persist queries across vim sessions
+    },
   }
 end
 
