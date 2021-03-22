@@ -21,9 +21,13 @@ packer.startup(function(use)
   use {'nvim-treesitter/playground'}
 
   -- Colorschemes
+  -- use {
+  --   'dracula/vim',
+  --   as = 'dracula',
+  --   config = function() require('utils').set_colorscheme('dracula') end
+  -- }
   use {
-    'dracula/vim',
-    as = 'dracula',
+    'christianchiarulli/nvcode-color-schemes.vim',
     config = function() require('utils').set_colorscheme('dracula') end
   }
 end)
