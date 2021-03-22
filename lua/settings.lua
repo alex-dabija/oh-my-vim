@@ -37,6 +37,9 @@ utils.set('expandtab', true)
 utils.set('tabstop', 2)
 utils.set('shiftwidth', 2)
 
+-- faster current token highlight for treesitter-refactor
+utils.set('updatetime', 300)
+
 -- TODO: replace with native feature after PR is merged: https://github.com/neovim/neovim/pull/12378
 vim.api.nvim_exec([[
   augroup ft_gitconfig

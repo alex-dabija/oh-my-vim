@@ -19,6 +19,7 @@ local options = {
   ['expandtab']      = {  true,  true, false },
   ['tabstop']        = {  true,  true, false },
   ['shiftwidth']     = {  true,  true, false },
+  ['updatetime']     = {  true, false, false },
 }
 
 M.set = function(option, value)
