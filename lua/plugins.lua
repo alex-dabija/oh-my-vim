@@ -17,6 +17,11 @@ packer.startup(function(use)
     'neovim/nvim-lspconfig',
     config = function() require('plugins.lsp-config').setup() end
   }
+  use {
+    'glepnir/lspsaga.nvim',
+    config = function() require('plugins.lsp-saga').setup() end,
+    disable = true,
+  }
 
   -- Treesitter
   use {
