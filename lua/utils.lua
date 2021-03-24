@@ -20,6 +20,7 @@ local options = {
   ['tabstop']        = {  true,  true, false },
   ['shiftwidth']     = {  true,  true, false },
   ['updatetime']     = {  true, false, false },
+  ['completeopt']    = {  true, false, false },
 }
 
 M.set = function(option, value)

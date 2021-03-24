@@ -23,6 +23,12 @@ packer.startup(function(use)
     disable = true,
   }
 
+  -- Autocomplete
+  use {
+    'hrsh7th/nvim-compe',
+    config = function() require('plugins.nvim-compe').setup() end,
+  }
+
   -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
