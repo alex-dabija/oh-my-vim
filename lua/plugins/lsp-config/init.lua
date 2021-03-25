@@ -8,6 +8,10 @@ function M.setup()
   lspconfig.rust_analyzer.setup {
     on_attach = configure_buffer,
   }
+
+  lspconfig.gopls.setup {
+    on_attach = configure_buffer,
+  }
 end
 
 function configure_diagnostic_signs()
