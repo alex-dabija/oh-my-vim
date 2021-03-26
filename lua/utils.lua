@@ -115,4 +115,13 @@ M.read_value_from_file = function(file_path)
   end
 end
 
+function M.is_package_available(package_name)
+  local has_package, pkg = pcall(require, package_name)
+  return has_package
+end
+
+function M.is_telescope_available()
+  return M.is_package_available('telescope')
+end
+
 return M

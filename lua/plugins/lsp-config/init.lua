@@ -1,5 +1,6 @@
 local M = {}
 
+local utils = require('utils')
 local lspconfig = require('lspconfig')
 
 function M.setup()
@@ -60,6 +61,14 @@ function configure_buffer(client, bufnr)
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
     ]], false)
+  end
+
+  configure_telescope_for_lsp()
+end
+
+function configure_telescope_for_lsp()
+  if utils.is_telescope_available() then
+    vim.api.nvim_set_keymap('n', '<Leader>ca', ':Telescope lsp_code_actions<CR>', {noremap = true, silent = true})
   end
 end
 
