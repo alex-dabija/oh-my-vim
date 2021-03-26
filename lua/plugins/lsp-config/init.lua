@@ -2,16 +2,21 @@ local M = {}
 
 local utils = require('utils')
 local lspconfig = require('lspconfig')
+local virtual_text = require('plugins.lsp-config.virtual_text')
+local buffer = require('plugins.lsp-config.buffer')
 
 function M.setup()
+  virtual_text.setup()
   configure_diagnostic_signs()
 
   lspconfig.rust_analyzer.setup {
     on_attach = configure_buffer,
+    handlers = common_lsp_handlers(),
   }
 
   lspconfig.gopls.setup {
     on_attach = configure_buffer,
+    handlers = common_lsp_handlers(),
   }
 end
 
@@ -27,6 +32,10 @@ function configure_diagnostic_sign(sign_name, sign)
 end
 
 function configure_buffer(client, bufnr)
+  local buf = buffer.new(client, bufnr)
+
+  virtual_text.on_attach(buf)
+
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -70,6 +79,12 @@ function configure_telescope_for_lsp()
   if utils.is_telescope_available() then
     vim.api.nvim_set_keymap('n', '<Leader>ca', ':Telescope lsp_code_actions<CR>', {noremap = true, silent = true})
   end
+end
+
+function common_lsp_handlers()
+  return {
+    ["textDocument/publishDiagnostics"] = virtual_text.on_publish_diagnostics,
+  }
 end
 
 return M
