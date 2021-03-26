@@ -11,6 +11,7 @@ function M.setup()
   vim.api.nvim_set_keymap('n', '<Leader>fr', ':Telescope registers<CR>', {noremap = true, silent = true})
   vim.api.nvim_set_keymap('n', '<Leader>ft', ':Telescope treesitter<CR>', {noremap = true, silent = true})
   vim.api.nvim_set_keymap('n', '<Leader>fo', ':Telescope vim_options<CR>', {noremap = true, silent = true})
+  vim.api.nvim_set_keymap('n', '<Leader>fk', ':Telescope keymaps<CR>', {noremap = true, silent = true})
 
   require('telescope').setup {
     defaults = {
