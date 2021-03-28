@@ -68,12 +68,14 @@ function configure_buffer(client, bufnr)
     ]], false)
   end
 
-  configure_telescope_for_lsp()
+  configure_telescope_for_lsp(buf)
 end
 
-function configure_telescope_for_lsp()
+function configure_telescope_for_lsp(buf)
   if utils.is_telescope_available() then
-    vim.api.nvim_set_keymap('n', '<Leader>ca', ':Telescope lsp_code_actions<CR>', {noremap = true, silent = true})
+    buf:set_keymap('n', '<Leader>ca', ':Telescope lsp_code_actions<CR>')
+    buf:set_keymap('n', '<Leader>dd', ':Telescope lsp_document_diagnostics<CR>')
+    buf:set_keymap('n', '<Leader>wd', ':Telescope lsp_workspace_diagnostics<CR>')
   end
 end
 
