@@ -76,6 +76,8 @@ function configure_telescope_for_lsp(buf)
     buf:set_keymap('n', '<Leader>ca', ':Telescope lsp_code_actions<CR>')
     buf:set_keymap('n', '<Leader>dd', ':Telescope lsp_document_diagnostics<CR>')
     buf:set_keymap('n', '<Leader>wd', ':Telescope lsp_workspace_diagnostics<CR>')
+    buf:set_keymap('n', '<Leader>ds', ':Telescope lsp_document_symbols<CR>')
+    buf:set_keymap('n', '<Leader>ws', ':Telescope lsp_workspace_symbols<CR>')
   end
 end
 
