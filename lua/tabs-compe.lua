@@ -1,9 +1,8 @@
 local M = {}
 
 function M.setup()
-  local opts = {noremap = true, silent = true, expr = true}
-  vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.tab_complete()', opts)
-  vim.api.nvim_set_keymap('i', '<S-Tab>', 'v:lua.s_tab_complete()', opts)
+  local keymaps = require('keymaps')
+  keymaps.set_keymaps(keymaps.TABS_COMPE)
 end
 
 local t = function(str)

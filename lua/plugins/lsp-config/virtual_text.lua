@@ -1,5 +1,7 @@
 local M = {}
 
+local keymaps = require('keymaps')
+
 local enabled = true
 
 function M.setup()
@@ -9,7 +11,7 @@ function M.setup()
 end
 
 function M.on_attach(buffer)
-  buffer:set_keymap('n', '<Leader>tv', ':LspVirtualTextToggle<CR>')
+  buffer:set_keymaps(keymaps.VIRTUAL_TEXT)
 end
 
 function M.should_display()
