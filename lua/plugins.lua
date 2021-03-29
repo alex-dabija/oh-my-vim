@@ -68,6 +68,15 @@ packer.startup(function(use)
     'kyazdani42/nvim-tree.lua',
     config = function() require('plugins.nvimtree').setup() end
   }
+
+  -- Git
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+    },
+    config = function() require('plugins.gitsigns').setup() end
+  }
 end)
 
 

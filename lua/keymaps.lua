@@ -83,6 +83,26 @@ local M = {
       { mode = 'n', lhs = '<Leader>tv', rhs = ':LspVirtualTextToggle<CR>'                                             },
     },
   },
+  GITSIGNS = {
+    opts = { noremap = true, silent = true },
+    keys = {
+      { mode = 'n', lhs = '<Leader>hs', rhs = '<Cmd>lua require("gitsigns").stage_hunk()<CR>'                         },
+      { mode = 'n', lhs = '<Leader>hu', rhs = '<Cmd>lua require("gitsigns").undo_stage_hunk()<CR>'                    },
+      { mode = 'n', lhs = '<Leader>hr', rhs = '<Cmd>lua require("gitsigns").reset_hunk()<CR>'                         },
+      { mode = 'n', lhs = '<Leader>hR', rhs = '<Cmd>lua require("gitsigns").reset_buffer()<CR>'                       },
+      { mode = 'n', lhs = '<Leader>hp', rhs = '<Cmd>lua require("gitsigns").preview_hunk()<CR>'                       },
+      { mode = 'n', lhs = '<Leader>hb', rhs = '<Cmd>lua require("gitsigns").blame_line()<CR>'                         },
+      { mode = 'o', lhs = 'ih',         rhs = ':<C-U>lua require("gitsigns").select_hunk()<CR>'                       },
+      { mode = 'x', lhs = 'ih',         rhs = ':<C-U>lua require("gitsigns").select_hunk()<CR>'                       },
+    },
+  },
+  GITSIGNS_NAVIGATION = {
+    opts = { noremap = true, silent = true, expr = true },
+    keys = {
+      { mode = 'n', lhs = ']c',         rhs = "&diff ? ']c' : '<cmd>lua require(\"gitsigns\").next_hunk()<CR>'"       },
+      { mode = 'n', lhs = '[c',         rhs = "&diff ? '[c' : '<cmd>lua require(\"gitsigns\").prev_hunk()<CR>'"       },
+    },
+  },
 }
 
 function M.set_keymaps(group)
