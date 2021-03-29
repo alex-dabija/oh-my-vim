@@ -9,12 +9,6 @@ function Buffer:new(o, client, bufnr)
   return o
 end
 
--- TODO: remove this method. It should not be needed after all keymaps are centralized
-function Buffer:set_keymap(mode, lhs, rhs)
-  local opts = { noremap = true, silent = true }
-  vim.api.nvim_buf_set_keymap(self.bufnr, mode, lhs, rhs, opts)
-end
-
 function Buffer:set_keymaps(group)
   -- TODO: validate that opts & keys are not nil
   local opts = group.opts
