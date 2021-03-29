@@ -10,11 +10,7 @@ function Buffer:new(o, client, bufnr)
 end
 
 function Buffer:set_keymaps(group)
-  -- TODO: validate that opts & keys are not nil
-  local opts = group.opts
-  for i, value in ipairs(group.keys) do
-    vim.api.nvim_buf_set_keymap(self.bufnr, value.mode, value.lhs, value.rhs, opts)
-  end
+  require('keymaps').set_buf_keymaps(self.bufnr, group)
 end
 
 function Buffer:set_option(name, value)

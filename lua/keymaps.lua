@@ -92,4 +92,11 @@ function M.set_keymaps(group)
   end
 end
 
+function M.set_buf_keymaps(bufnr, group)
+  local opts = group.opts
+  for i, value in ipairs(group.keys) do
+    vim.api.nvim_buf_set_keymap(bufnr, value.mode, value.lhs, value.rhs, opts)
+  end
+end
+
 return M
