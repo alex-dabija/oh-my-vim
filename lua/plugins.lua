@@ -77,6 +77,11 @@ packer.startup(function(use)
     },
     config = function() require('plugins.gitsigns').setup() end
   }
+
+  use {
+    'terrortylor/nvim-comment',
+    config = function() require('plugins.nvim-comment').setup() end
+  }
 end)
 
 
