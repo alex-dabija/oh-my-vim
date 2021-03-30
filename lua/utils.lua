@@ -21,6 +21,8 @@ local options = {
   ['shiftwidth']     = {  true,  true, false },
   ['updatetime']     = {  true, false, false },
   ['completeopt']    = {  true, false, false },
+  ['splitbelow']     = {  true, false, false },
+  ['splitright']     = {  true, false, false },
 }
 
 M.set = function(option, value)
