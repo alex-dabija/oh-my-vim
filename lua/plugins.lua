@@ -69,6 +69,14 @@ packer.startup(function(use)
     config = function() require('plugins.nvimtree').setup() end
   }
 
+  use {
+    'romgrk/barbar.nvim',
+    requires = {
+      {'kyazdani42/nvim-web-devicons'}
+    },
+    config = function() require('plugins.barbar').setup() end
+  }
+
   -- Git
   use {
     'lewis6991/gitsigns.nvim',
@@ -82,6 +90,7 @@ packer.startup(function(use)
     'terrortylor/nvim-comment',
     config = function() require('plugins.nvim-comment').setup() end
   }
+
 end)
 
 

@@ -114,7 +114,36 @@ local M = {
       { mode = 'n', lhs = 'gc',         rhs = ':set operatorfunc=CommentOperator<CR>g@'                               },
       { mode = 'v', lhs = 'gc',         rhs = ':<C-U>call CommentOperator(visualmode())<CR>'                          },
     },
-  }
+  },
+  BARBAR = {
+    opts = { noremap = true, silent = true },
+    keys = {
+      { mode = 'n', lhs = '<A-,>',      rhs = ':BufferPrevious<CR>'                                                   },
+      { mode = 'n', lhs = '<S-Tab>',    rhs = ':BufferPrevious<CR>'                                                   },
+      { mode = 'n', lhs = '<A-.>',      rhs = ':BufferNext<CR>'                                                       },
+      { mode = 'n', lhs = '<Tab>',      rhs = ':BufferNext<CR>'                                                       },
+      { mode = 'n', lhs = '<A-<>',      rhs = ':BufferMovePrevious<CR>'                                               },
+      { mode = 'n', lhs = '<A->>',      rhs = ':BufferMoveNext<CR>'                                                   },
+      { mode = 'n', lhs = '<A-1>',      rhs = ':BufferGoto 1<CR>'                                                     },
+      { mode = 'n', lhs = '<A-2>',      rhs = ':BufferGoto 2<CR>'                                                     },
+      { mode = 'n', lhs = '<A-3>',      rhs = ':BufferGoto 3<CR>'                                                     },
+      { mode = 'n', lhs = '<A-4>',      rhs = ':BufferGoto 4<CR>'                                                     },
+      { mode = 'n', lhs = '<A-5>',      rhs = ':BufferGoto 5<CR>'                                                     },
+      { mode = 'n', lhs = '<A-6>',      rhs = ':BufferGoto 6<CR>'                                                     },
+      { mode = 'n', lhs = '<A-7>',      rhs = ':BufferGoto 7<CR>'                                                     },
+      { mode = 'n', lhs = '<A-8>',      rhs = ':BufferGoto 8<CR>'                                                     },
+      { mode = 'n', lhs = '<A-9>',      rhs = ':BufferGoto 9<CR>'                                                     },
+      { mode = 'n', lhs = '<A-0>',      rhs = ':BufferLast<CR>'                                                       },
+      { mode = 'n', lhs = '<C-s>',      rhs = ':BufferPick<CR>'                                                       },
+      { mode = 'n', lhs = '<Leader>bd', rhs = ':BufferOrderByDirectory<CR>'                                           },
+      { mode = 'n', lhs = '<Leader>bl', rhs = ':BufferOrderByLanguage<CR>'                                            },
+      { mode = 'n', lhs = '<A-c>',      rhs = ':BufferClose<CR>'                                                      },
+      { mode = 'n', lhs = '<Leader>co', rhs = ':BufferCloseAllButCurrent<CR>'                                         },
+      { mode = 'n', lhs = '<Leader>cl', rhs = ':BufferCloseBuffersLeft<CR>'                                           },
+      { mode = 'n', lhs = '<Leader>cr', rhs = ':BufferCloseBuffersRight<CR>'                                          },
+      { mode = 'n', lhs = '<Leader>bw', rhs = ':BufferWipeout<CR>'                                                    },
+    },
+  },
 }
 
 function M.set_keymaps(group)
