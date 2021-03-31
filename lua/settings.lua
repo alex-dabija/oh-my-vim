@@ -53,3 +53,12 @@ vim.api.nvim_exec([[
     autocmd FileType gitconfig setlocal shiftwidth=4
   augroup END
 ]], false)
+
+vim.api.nvim_exec([[
+  augroup ft_golang
+    autocmd!
+    autocmd FileType go setlocal noexpandtab
+    autocmd FileType go setlocal tabstop=2
+    autocmd FileType go setlocal shiftwidth=2
+  augroup END
+]], false)
