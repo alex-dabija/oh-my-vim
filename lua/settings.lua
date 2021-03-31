@@ -60,5 +60,6 @@ vim.api.nvim_exec([[
     autocmd FileType go setlocal noexpandtab
     autocmd FileType go setlocal tabstop=2
     autocmd FileType go setlocal shiftwidth=2
+    autocmd BufWritePre *.go :lua vim.lsp.buf.formatting_sync(nil, 1000)
   augroup END
 ]], false)
