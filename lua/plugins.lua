@@ -72,12 +72,22 @@ packer.startup(function(use)
     config = function() require('plugins.nvimtree').setup() end
   }
 
+  -- UI plugins
   use {
     'romgrk/barbar.nvim',
     requires = {
       {'kyazdani42/nvim-web-devicons'}
     },
     config = function() require('plugins.barbar').setup() end
+  }
+
+  use {
+    'glepnir/galaxyline.nvim',
+    branch = 'main',
+    requires = {
+      {'kyazdani42/nvim-web-devicons'},
+    },
+    config = function() require('plugins.galaxyline').setup() end
   }
 
   -- Git
@@ -92,6 +102,11 @@ packer.startup(function(use)
   use {
     'terrortylor/nvim-comment',
     config = function() require('plugins.nvim-comment').setup() end
+  }
+
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function() require('colorizer').setup() end
   }
 
 end)
