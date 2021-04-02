@@ -44,16 +44,6 @@ utils.set('updatetime', 300)
 utils.set('splitbelow', true)
 utils.set('splitright', true)
 
--- TODO: replace with native feature after PR is merged: https://github.com/neovim/neovim/pull/12378
-vim.api.nvim_exec([[
-  augroup ft_gitconfig
-    autocmd!
-    autocmd FileType gitconfig setlocal noexpandtab
-    autocmd FileType gitconfig setlocal tabstop=4
-    autocmd FileType gitconfig setlocal shiftwidth=4
-  augroup END
-]], false)
-
 vim.api.nvim_exec([[
   augroup ft_per_type_config
     autocmd!
