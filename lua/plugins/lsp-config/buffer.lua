@@ -1,10 +1,9 @@
 Buffer = {}
 
-function Buffer:new(o, client, bufnr)
+function Buffer:new(o, bufnr)
   o = o or {}
   setmetatable(o, self)
   self.__index = self
-  self.client = client
   self.bufnr = bufnr
   return o
 end
@@ -19,8 +18,8 @@ end
 
 local M = {}
 
-function M.new(client, bufnr)
-  return Buffer:new(client, bufnr)
+function M.new(bufnr)
+  return Buffer:new(nil, bufnr)
 end
 
 return M

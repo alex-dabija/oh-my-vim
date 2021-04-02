@@ -55,11 +55,8 @@ vim.api.nvim_exec([[
 ]], false)
 
 vim.api.nvim_exec([[
-  augroup ft_golang
+  augroup ft_per_type_config
     autocmd!
-    autocmd FileType go setlocal noexpandtab
-    autocmd FileType go setlocal tabstop=2
-    autocmd FileType go setlocal shiftwidth=2
-    autocmd BufWritePre *.go :lua vim.lsp.buf.formatting_sync(nil, 1000)
+    autocmd FileType * :lua require('filetypes').setup()
   augroup END
 ]], false)
