@@ -30,7 +30,7 @@ function actions:setup_autoformat_on_save()
     local cmd = string.format([[
       augroup ft_%s_format
         autocmd!
-        autocmd BufWritePre *.%s :lua vim.lsp.buf.formatting_sync(nil, 1000)
+        autocmd BufWritePre *.%s :lua require('utils').lsp_format_file()
       augroup END
     ]], self.filetype, vim.fn.expand('%:e'))
     vim.api.nvim_exec(cmd, false)

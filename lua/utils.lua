@@ -126,4 +126,8 @@ function M.is_telescope_available()
   return M.is_package_available('telescope')
 end
 
+function M.lsp_format_file()
+  vim.lsp.buf.formatting_sync(nil, 1000)
+end
+
 return M

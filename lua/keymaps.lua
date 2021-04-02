@@ -30,6 +30,7 @@ local M = {
       { mode = 'n', lhs = '<Leader>wa', rhs = '<Cmd>lua vim.lsp.buf.add_workspace_folder()<CR>'                       },
       { mode = 'n', lhs = '<Leader>wr', rhs = '<Cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>'                    },
       { mode = 'n', lhs = '<Leader>wl', rhs = '<Cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>' },
+      { mode = 'n', lhs = 'gf',         rhs = '<Cmd>lua require("utils").lsp_format_file()<CR>'                       },
     },
   },
   LSP_TELESCOPE = {
