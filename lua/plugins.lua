@@ -14,7 +14,10 @@ packer.startup(function(use)
 
   -- LSP
   use {
-    'neovim/nvim-lspconfig',
+    --'neovim/nvim-lspconfig',
+    'git@git.tools.kbee.xyz:opensource/vim/nvim-lspconfig.git',
+    as = 'nvim-lspconfig',
+    branch = 'fix-lsp-new-file',
     config = function() require('plugins.lsp-config').setup() end
   }
   use {
