@@ -23,6 +23,7 @@ local options = {
   ['completeopt']    = {  true, false, false },
   ['splitbelow']     = {  true, false, false },
   ['splitright']     = {  true, false, false },
+  ['cursorline']     = {  true, false,  true },
 }
 
 M.set = function(option, value)

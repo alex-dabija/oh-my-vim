@@ -44,6 +44,9 @@ utils.set('updatetime', 300)
 utils.set('splitbelow', true)
 utils.set('splitright', true)
 
+-- highlight current line
+utils.set('cursorline', true)
+
 vim.api.nvim_exec([[
   augroup ft_per_type_config
     autocmd!
