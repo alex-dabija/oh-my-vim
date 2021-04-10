@@ -10,8 +10,24 @@ local M = {
       { mode = 'n', lhs = '<C-Right>',  rhs = ':vertical resize +2<CR>'                                               },
       { mode = 'n', lhs = '<C-w>s',     rhs = ':split<CR>'                                                            },
       { mode = 'n', lhs = '<C-w>v',     rhs = ':vsplit<CR>'                                                           },
+
+      -- Vim tabs keybindings
+      { mode = 'n', lhs = '<Leader>tn', rhs = ':tabnew<CR>'                                                           },
+      { mode = 'n', lhs = '<C-w>T',     rhs = ':tabedit %<CR>'                                                        },
+      { mode = 'n', lhs = '<Leader>tc', rhs = ':tabclose<CR>'                                                         },
+      { mode = 'n', lhs = '<Leader>to', rhs = ':tabonly<CR>'                                                          },
+
+      -- disable backspace and delete keys
       { mode = 'i', lhs = '<BS>',       rhs = '<Nop>'                                                                 },
       { mode = 'i', lhs = '<Del>',      rhs = '<Nop>'                                                                 },
+    },
+  },
+  GLOBAL_SILENT = {
+    opts = { noremap = true, silent = false},
+    keys = {
+      -- Vim tabs keybindings
+      { mode = 'n', lhs = '<Leader>tm', rhs = ':tabmove '                                                             },
+      { mode = 'n', lhs = '<Leader>te', rhs = ':tabedit '                                                             },
     },
   },
   LSP = {
