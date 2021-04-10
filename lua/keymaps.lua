@@ -10,6 +10,8 @@ local M = {
       { mode = 'n', lhs = '<C-Right>',  rhs = ':vertical resize +2<CR>'                                               },
       { mode = 'n', lhs = '<C-w>s',     rhs = ':split<CR>'                                                            },
       { mode = 'n', lhs = '<C-w>v',     rhs = ':vsplit<CR>'                                                           },
+      { mode = 'i', lhs = '<BS>',       rhs = '<Nop>'                                                                 },
+      { mode = 'i', lhs = '<Del>',      rhs = '<Nop>'                                                                 },
     },
   },
   LSP = {
