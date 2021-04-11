@@ -142,7 +142,7 @@ local modes = {
   end,
 }
 
-local function register_events()
+local function register_event_handlers()
   vim.api.nvim_exec([[
     augroup stagate_galaxyline_theme
       autocmd!
@@ -298,7 +298,7 @@ function M.init_theme()
 end
 
 function M.setup()
-  register_events()
+  register_event_handlers()
 
   gls.left = {{
     ViMode = {
