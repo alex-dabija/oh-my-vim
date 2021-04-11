@@ -136,7 +136,7 @@ local modes = {
     ['r?'] = Mode.new('N/A',      colors.mode_unknown_fg, colors.mode_unknown_bg),
     ['!']  = Mode.new('N/A',      colors.mode_unknown_fg, colors.mode_unknown_bg),
   },
-  default = Mode.new('N/A', colors.deep_pink, colors.deep_pink),
+  default = Mode.new('N/A', colors.mode_unknown_fg, colors.mode_unknown_bg),
   current_mode = function(self)
     return self.data[vim.fn.mode()] or self.default
   end,
@@ -178,8 +178,6 @@ local my_providers = {
     local mode = modes:current_mode()
     highlight('GalaxyViMode', mode.fg, mode.bg, 'bold')
     highlight('GalaxyViModeInv', mode.bg, colors.fileinfo_bg)
-    highlight('GalaxyViModeNested', colors.fg2, mode.bg)
-    highlight('GalaxyViModeInvNested', mode.bg, colors.bg1)
     return string.format('  %s ', mode.label)
   end,
 
@@ -283,11 +281,24 @@ local my_providers = {
   end,
 }
 
-function M.setup()
+local function register_events()
+  vim.api.nvim_exec([[
+    augroup stagate_galaxyline_theme
+      autocmd!
+      autocmd ColorScheme * lua require('plugins.galaxyline').init_theme()
+    augroup end
+  ]], false)
+end
+
+function M.init_theme()
   highlight('GalaxyFileInfo', colors.fileinfo_fg, colors.fileinfo_bg)
   highlight('GalaxyFileInfoInv', colors.fileinfo_fg, colors.fileinfo_bg)
   highlight('GalaxyFileInfoSeparator', colors.fileinfo_bg, colors.git_info_bg)
   highlight('GalaxyGitInfo', colors.git_info_fg, colors.git_info_bg)
+end
+
+function M.setup()
+  register_events()
 
   gls.left = {{
     ViMode = {
