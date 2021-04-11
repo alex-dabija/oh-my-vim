@@ -142,6 +142,15 @@ local modes = {
   end,
 }
 
+local function register_events()
+  vim.api.nvim_exec([[
+    augroup stagate_galaxyline_theme
+      autocmd!
+      autocmd ColorScheme * lua require('plugins.galaxyline').init_theme()
+    augroup end
+  ]], false)
+end
+
 local function highlight(group, fg, bg, gui)
   local cmd = string.format('highlight %s guifg=%s guibg=%s', group, fg, bg)
   if gui ~= nil then
@@ -173,121 +182,112 @@ local function get_special_window_name()
   return window_names[file_type] or file_type
 end
 
-local my_providers = {
-  vi_mode = function()
-    local mode = modes:current_mode()
-    highlight('GalaxyViMode', mode.fg, mode.bg, 'bold')
-    highlight('GalaxyViModeInv', mode.bg, colors.fileinfo_bg)
-    return string.format('  %s ', mode.label)
-  end,
+local my_providers = {}
 
-  file_icon = function()
-    if is_special_window() then return '' end
-    local fg = provider.fileinfo.get_file_icon_color()
-    highlight('GalaxyFileIcon', fg, colors.fileinfo_bg)
-    return ' ' .. provider.fileinfo.get_file_icon()
-  end,
+function my_providers.vi_mode()
+  local mode = modes:current_mode()
+  highlight('GalaxyViMode', mode.fg, mode.bg, 'bold')
+  highlight('GalaxyViModeInv', mode.bg, colors.fileinfo_bg)
+  return string.format('  %s ', mode.label)
+end
 
-  file_name = function()
-    if is_special_window() then return get_special_window_name() end
-    local fname
-    if wide_enough(120) then
-      fname = vim.fn.fnamemodify(vim.fn.expand '%', ':~:.')
-    else
-      fname = vim.fn.expand '%:t'
-    end
-    if #fname == 0 then return '' end
-    if vim.bo.readonly then
-      fname = fname .. ' ' .. icons.locker
-    end
-    if not vim.bo.modifiable then
-      fname = fname .. ' ' .. icons.not_modifiable
-    end
-    if vim.bo.modified then
-      fname = fname .. ' ' .. icons.pencil
-    end
-    return ' ' .. fname .. ' '
-  end,
+function my_providers.file_icon()
+  if is_special_window() then return '' end
+  local fg = provider.fileinfo.get_file_icon_color()
+  highlight('GalaxyFileIcon', fg, colors.fileinfo_bg)
+  return ' ' .. provider.fileinfo.get_file_icon()
+end
 
-  paste = function()
-    if vim.o.paste then return 'Paste ' end
-    return ''
-  end,
+function my_providers.file_name()
+  if is_special_window() then return get_special_window_name() end
+  local fname
+  if wide_enough(120) then
+    fname = vim.fn.fnamemodify(vim.fn.expand '%', ':~:.')
+  else
+    fname = vim.fn.expand '%:t'
+  end
+  if #fname == 0 then return '' end
+  if vim.bo.readonly then
+    fname = fname .. ' ' .. icons.locker
+  end
+  if not vim.bo.modifiable then
+    fname = fname .. ' ' .. icons.not_modifiable
+  end
+  if vim.bo.modified then
+    fname = fname .. ' ' .. icons.pencil
+  end
+  return ' ' .. fname .. ' '
+end
 
-  git_icon = function()
-    if should_display_git_info() then
-      return string.format(' %s ', icons.git)
-    end
-    return ''
-  end,
+function my_providers.paste()
+  if vim.o.paste then return 'Paste ' end
+  return ''
+end
 
-  git_branch = function()
-    if should_display_git_info() then
-      local branch = provider.vcs.get_git_branch()
-      if branch then
-        return branch .. ' '
-      end
-      return ''
-    end
-    return ''
-  end,
+function my_providers.git_icon()
+  if should_display_git_info() then
+    return string.format(' %s ', icons.git)
+  end
+  return ''
+end
 
-  lsp_status = function()
-    local connected = diagnostic_exists()
-    if connected then
-      return '  ' .. icons.connected .. ' '
+function my_providers.git_branch()
+  if should_display_git_info() then
+    local branch = provider.vcs.get_git_branch()
+    if branch then
+      return branch .. ' '
     end
     return ''
-  end,
+  end
+  return ''
+end
 
-  lsp_client = function()
-    return ' ' .. provider.lsp.get_lsp_client('') .. ' '
-  end,
+function my_providers.lsp_status()
+  local connected = diagnostic_exists()
+  if connected then
+    return '  ' .. icons.connected .. ' '
+  end
+  return ''
+end
 
-  right_nested_separator = function()
-    if is_special_window() then return '' end
-    return separators.right_filled
-  end,
+function my_providers.lsp_client()
+  return ' ' .. provider.lsp.get_lsp_client('') .. ' '
+end
 
-  file_format = function()
-    if is_special_window() then return '' end
-    if not condition.buffer_not_empty() or not wide_enough(70) then
-      return ''
-    end
-    local icon = icons[vim.bo.fileformat] or ''
-    return string.format('  %s %s ', icon, vim.bo.fileencoding)
-  end,
+function my_providers.right_nested_separator()
+  if is_special_window() then return '' end
+  return separators.right_filled
+end
 
-  right_separator = function()
-    if is_special_window() then return '' end
-    return separators.right
-  end,
+function my_providers.file_format()
+  if is_special_window() then return '' end
+  if not condition.buffer_not_empty() or not wide_enough(70) then
+    return ''
+  end
+  local icon = icons[vim.bo.fileformat] or ''
+  return string.format('  %s %s ', icon, vim.bo.fileencoding)
+end
 
-  position_info = function()
-    if is_special_window() then return '' end
-    if not condition.buffer_not_empty() or not wide_enough(60) then
-      return ''
-    end
-    return string.format('  %s %s:%s ', icons.line_number, vim.fn.line('.'), vim.fn.col('.'))
-  end,
+function my_providers.right_separator()
+  if is_special_window() then return '' end
+  return separators.right
+end
 
-  percent_info = function()
-    if is_special_window() then return '' end
-    if not condition.buffer_not_empty() or not wide_enough(65) then
-      return ''
-    end
-    local percent = math.floor(100 * vim.fn.line('.') / vim.fn.line('$'))
-    return string.format(' %s %s%s', icons.page, percent, '% ')
-  end,
-}
+function my_providers.position_info()
+  if is_special_window() then return '' end
+  if not condition.buffer_not_empty() or not wide_enough(60) then
+    return ''
+  end
+  return string.format('  %s %s:%s ', icons.line_number, vim.fn.line('.'), vim.fn.col('.'))
+end
 
-local function register_events()
-  vim.api.nvim_exec([[
-    augroup stagate_galaxyline_theme
-      autocmd!
-      autocmd ColorScheme * lua require('plugins.galaxyline').init_theme()
-    augroup end
-  ]], false)
+function my_providers.percent_info()
+  if is_special_window() then return '' end
+  if not condition.buffer_not_empty() or not wide_enough(65) then
+    return ''
+  end
+  local percent = math.floor(100 * vim.fn.line('.') / vim.fn.line('$'))
+  return string.format(' %s %s%s', icons.page, percent, '% ')
 end
 
 function M.init_theme()
