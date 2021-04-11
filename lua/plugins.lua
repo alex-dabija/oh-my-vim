@@ -113,6 +113,11 @@ packer.startup(function(use)
     config = function() require('colorizer').setup() end
   }
 
+  use {
+    'phaazon/hop.nvim',
+    config = function() require('plugins.hop').setup() end
+  }
+
 end)
 
 

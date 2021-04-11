@@ -169,6 +169,21 @@ local M = {
       { mode = 'n', lhs = '<Leader>tf', rhs = '<Cmd>lua require("telescope").extensions.tele_tabby.list({})<CR>'      },
     },
   },
+  HOP = {
+    opts = { noremap = true, silent = true },
+    keys = {
+      { mode = 'n', lhs = 'jl',         rhs = ':HopLine<CR>'                                                          },
+      { mode = 'o', lhs = 'jl',         rhs = ':HopLine<CR>'                                                          },
+      { mode = 'n', lhs = 'jw',         rhs = ':HopWord<CR>'                                                          },
+      { mode = 'o', lhs = 'jw',         rhs = ':HopWord<CR>'                                                          },
+      { mode = 'n', lhs = 'jp',         rhs = ':HopPattern<CR>'                                                       },
+      { mode = 'o', lhs = 'jp',         rhs = ':HopPattern<CR>'                                                       },
+      { mode = 'n', lhs = 'j1',         rhs = ':HopChar1<CR>'                                                         },
+      { mode = 'o', lhs = 'j1',         rhs = ':HopChar1<CR>'                                                         },
+      { mode = 'n', lhs = 'j2',         rhs = ':HopChar2<CR>'                                                         },
+      { mode = 'o', lhs = 'j2',         rhs = ':HopChar2<CR>'                                                         },
+    },
+  },
 }
 
 function M.set_keymaps(group)
