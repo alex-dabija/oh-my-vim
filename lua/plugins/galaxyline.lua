@@ -9,10 +9,11 @@ local provider = {
   fileinfo = require('galaxyline.provider_fileinfo')
 }
 
-gl.short_line_list = {'', 'vim-plug', 'tagbar', 'Mundo', 'MundoDiff', 'coc-explorer', 'startify', 'NvimTree'}
+gl.short_line_list = {'', 'packer', 'vim-plug', 'tagbar', 'Mundo', 'MundoDiff', 'coc-explorer', 'startify', 'NvimTree'}
 
 local window_names = {
   ['']         = '[No File Type]',
+  ['packer']   = 'Packer',
   ['NvimTree'] = 'File Explorer',
 }
 
