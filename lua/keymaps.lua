@@ -163,6 +163,12 @@ local M = {
       { mode = 'n', lhs = '<Leader>bw', rhs = ':BufferWipeout<CR>'                                                    },
     },
   },
+  TELE_TABBY = {
+    opts = { noremap = true, silent = true },
+    keys = {
+      { mode = 'n', lhs = '<Leader>tf', rhs = '<Cmd>lua require("telescope").extensions.tele_tabby.list({})<CR>'      },
+    },
+  },
 }
 
 function M.set_keymaps(group)

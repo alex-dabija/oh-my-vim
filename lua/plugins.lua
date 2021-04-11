@@ -55,6 +55,10 @@ packer.startup(function(use)
     },
     config = function() require('plugins.telescope').setup() end
   }
+  use {
+    'TC72/telescope-tele-tabby.nvim',
+    config = function() require('plugins.telescope-tele-tabby').setup() end
+  }
 
   -- Colorschemes
   -- use {
