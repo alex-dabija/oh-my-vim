@@ -92,7 +92,7 @@ M.sha256sum = function(file, func)
       on_stdout = on_event,
       on_exit = on_event,
       stdout_buffered = true,
-      stdout_buffered = true,
+      stderr_buffered = true,
   })
 end
 
