@@ -19,6 +19,28 @@ function M.setup()
     on_attach = configure_buffer,
     handlers = common_lsp_handlers(),
   }
+
+  local sumneko_root_path = vim.fn.stdpath('data') .. '/site/oh-my-vim/lua-language-server'
+  lspconfig.sumneko_lua.setup {
+    cmd = { sumneko_root_path .. '/bin/Linux/lua-language-server', '-E', sumneko_root_path .. '/main.lua' },
+    on_attach = configure_buffer,
+    handlers = common_lsp_handlers(),
+    settings = {
+      Lua = {
+        runtime = {
+          version = 'LuaJIT',
+          path = vim.split(package.path, ';')
+        },
+        diagnostics = {
+          globals = {'vim'},
+        },
+        workspace = {
+          library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true},
+          maxPreload = 10000,
+        },
+      },
+    },
+  }
 end
 
 function configure_diagnostic_signs()
