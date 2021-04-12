@@ -20,6 +20,12 @@ local M = {
       -- disable backspace and delete keys
       { mode = 'i', lhs = '<BS>',       rhs = '<Nop>'                                                                 },
       { mode = 'i', lhs = '<Del>',      rhs = '<Nop>'                                                                 },
+
+      -- terminal keybindings
+      { mode = 'n', lhs = '<Space>ts',  rhs = ':split term://zsh<CR>'                                                 },
+      { mode = 'n', lhs = '<Space>tv',  rhs = ':vsplit term://zsh<CR>'                                                },
+      { mode = 'n', lhs = '<Space>te',  rhs = ':edit term://zsh<CR>'                                                  },
+      { mode = 'n', lhs = '<Space>tt',  rhs = ':tabnew term://zsh<CR>'                                                },
     },
   },
   GLOBAL_SILENT = {
