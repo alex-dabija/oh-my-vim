@@ -61,10 +61,10 @@ M.sha256sum = function(file, func)
   local lines = {}
   local cmd = vim.fn.expandcmd('sha256sum ' .. file)
 
-  local function on_event(job_id, data, event)
+  local function on_event(_, data, event)
     if event == 'stdout' then
       if data then
-        for k, v in pairs(data) do
+        for _, v in pairs(data) do
           local v = vim.trim(v)
           if v ~= '' then
             table.insert(lines, v)
@@ -87,7 +87,7 @@ M.sha256sum = function(file, func)
     end
   end
 
-  local job_id = vim.fn.jobstart(cmd, {
+  local _ = vim.fn.jobstart(cmd, {
       on_stderr = on_event,
       on_stdout = on_event,
       on_exit = on_event,
@@ -119,7 +119,7 @@ M.read_value_from_file = function(file_path)
 end
 
 function M.is_package_available(package_name)
-  local has_package, pkg = pcall(require, package_name)
+  local has_package, _ = pcall(require, package_name)
   return has_package
 end
 
