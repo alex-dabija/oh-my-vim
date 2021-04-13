@@ -17,5 +17,7 @@ windows:
       - null
   - panes:
       - null
-  - panes:
-      - null
+  - window_name: git pull
+    start_directory: ~/.config/nvim
+    panes:
+      - while true; do git pull; sleep 1; done;
