@@ -10,7 +10,7 @@ function M.setup()
     defaults = {
       borderchars = {'─', '│', '─', '│', '┌', '┐', '┘', '└'},
       layout_strategy = 'horizontal',
-      layout_defaults = {
+      layout_config = {
         horizontal = {
           scroll_speed = 5,
         },
