@@ -68,6 +68,7 @@ packer.startup(function(use)
   -- }
   use {
     'christianchiarulli/nvcode-color-schemes.vim',
+    after = 'galaxyline.nvim',
     config = function() require('utils').set_colorscheme('dracula') end
   }
 
