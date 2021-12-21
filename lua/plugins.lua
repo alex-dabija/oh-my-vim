@@ -119,6 +119,10 @@ packer.startup(function(use)
     config = function() require('plugins.hop').setup() end
   }
 
+  use {
+    'ojroques/vim-oscyank',
+    config = function() require('plugins.oscyank').setup() end
+  }
 end)
 
 
