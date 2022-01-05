@@ -73,6 +73,12 @@ packer.startup(function(use)
   }
 
   use {
+    'folke/tokyonight.nvim',
+    after = 'galaxyline.nvim',
+    config = function() require('utils').set_colorscheme('tokyonight') end
+  }
+
+  use {
     'kyazdani42/nvim-tree.lua',
     config = function() require('plugins.nvimtree').setup() end
   }
