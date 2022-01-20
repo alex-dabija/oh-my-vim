@@ -88,6 +88,11 @@ function M.setup()
       },
     },
   }
+
+  lspconfig.ansiblels.setup {
+    on_attach = configure_buffer,
+    handlers = common_lsp_handlers(),
+  }
 end
 
 return M
