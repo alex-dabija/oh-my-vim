@@ -61,8 +61,8 @@ local M = {
     opts = { noremap = true, silent = true },
     keys = {
       { mode = 'n', lhs = '<Leader>ca', rhs = ':Telescope lsp_code_actions<CR>'                                       },
-      { mode = 'n', lhs = '<Leader>dd', rhs = ':Telescope lsp_document_diagnostics<CR>'                               },
-      { mode = 'n', lhs = '<Leader>wd', rhs = ':Telescope lsp_workspace_diagnostics<CR>'                              },
+      { mode = 'n', lhs = '<Leader>dd', rhs = ':Telescope diagnostics bufnr=0<CR>'                                    },
+      { mode = 'n', lhs = '<Leader>wd', rhs = ':Telescope diagnostics<CR>'                                            },
       { mode = 'n', lhs = '<Leader>ds', rhs = ':Telescope lsp_document_symbols<CR>'                                   },
       { mode = 'n', lhs = '<Leader>ws', rhs = ':Telescope lsp_workspace_symbols<CR>'                                  },
       { mode = 'n', lhs = 'gd',         rhs = ':Telescope lsp_definitions<CR>'                                        },
