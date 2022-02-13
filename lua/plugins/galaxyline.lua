@@ -4,9 +4,9 @@ local gl = require('galaxyline')
 local gls = gl.section
 local condition = require('galaxyline.condition')
 local provider = {
-  lsp = require('galaxyline.provider_lsp'),
-  vcs = require('galaxyline.provider_vcs'),
-  fileinfo = require('galaxyline.provider_fileinfo')
+  lsp = require('galaxyline.providers.lsp'),
+  vcs = require('galaxyline.providers.vcs'),
+  fileinfo = require('galaxyline.providers.fileinfo')
 }
 
 gl.short_line_list = {'', 'packer', 'vim-plug', 'tagbar', 'Mundo', 'MundoDiff', 'coc-explorer', 'startify', 'NvimTree'}
