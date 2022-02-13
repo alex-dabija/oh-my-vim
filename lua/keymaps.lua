@@ -89,23 +89,6 @@ local M = {
       { mode = 'n', lhs = '<Leader>tt',  rhs = ':NvimTreeToggle<CR>'                                                  },
     },
   },
-  COMPE = {
-    opts = { noremap = true, silent = true, expr = true },
-    keys = {
-      { mode = 'i', lhs = '<C-Space>', rhs = 'compe#complete()'                                                       },
-      { mode = 'i', lhs = '<CR>',      rhs = 'compe#confirm("<CR>")'                                                  },
-      { mode = 'i', lhs = '<C-e>',     rhs = 'compe#close("<C-e>")'                                                   },
-      { mode = 'i', lhs = '<C-f>',     rhs = 'compe#scroll({"delta": +4})'                                            },
-      { mode = 'i', lhs = '<C-d>',     rhs = 'compe#scroll({"delta": -4})'                                            },
-    },
-  },
-  TABS_COMPE = {
-    opts = { noremap = true, silent = true, expr = true },
-    keys = {
-      { mode = 'i', lhs = '<Tab>',   rhs = 'v:lua.tab_complete()'                                                     },
-      { mode = 'i', lhs = '<S-Tab>', rhs = 'v:lua.s_tab_complete()'                                                   },
-    },
-  },
   VIRTUAL_TEXT = {
     opts = { noremap = true, silent = true },
     keys = {

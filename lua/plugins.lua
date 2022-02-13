@@ -32,9 +32,10 @@ packer.startup(function(use)
 
   -- Autocomplete
   use {
-    'hrsh7th/nvim-compe',
-    config = function() require('plugins.nvim-compe').setup() end,
+    'hrsh7th/nvim-cmp',
+    config = function() require('plugins.nvim-cmp').setup() end,
   }
+  use {'hrsh7th/cmp-nvim-lsp'}
 
   -- Treesitter
   use {
@@ -103,13 +104,8 @@ packer.startup(function(use)
   }
 
   -- Git
-  use {
-    'tpope/vim-fugitive'
-  }
-
-  use {
-    'tpope/vim-rhubarb'
-  }
+  use {'tpope/vim-fugitive'}
+  use {'tpope/vim-rhubarb'}
 
   use {
     'lewis6991/gitsigns.nvim',
