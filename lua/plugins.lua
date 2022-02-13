@@ -93,7 +93,7 @@ packer.startup(function(use)
   }
 
   use {
-    'glepnir/galaxyline.nvim',
+    'NTBBloodbath/galaxyline.nvim',
     branch = 'main',
     requires = {
       {'kyazdani42/nvim-web-devicons'},
