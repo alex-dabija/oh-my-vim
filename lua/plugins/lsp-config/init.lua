@@ -74,7 +74,6 @@ function M.setup()
 
   local sumneko_root_path = vim.fn.stdpath('data') .. '/site/oh-my-vim/lua-language-server'
   lspconfig.sumneko_lua.setup {
-    cmd = { sumneko_root_path .. '/bin/Linux/lua-language-server', '-E', sumneko_root_path .. '/main.lua' },
     on_attach = configure_buffer,
     handlers = common_lsp_handlers(),
     settings = {
