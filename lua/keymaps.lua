@@ -132,14 +132,6 @@ local M = {
       { mode = 'n', lhs = '[c',         rhs = "&diff ? '[c' : '<cmd>lua require(\"gitsigns\").prev_hunk()<CR>'"       },
     },
   },
-  NVIM_COMMENT = {
-    opts = { noremap = true, silent = true },
-    keys = {
-      { mode = 'n', lhs = 'gcc',        rhs = '<Cmd>CommentToggle<CR>'                                                },
-      { mode = 'n', lhs = 'gc',         rhs = ':set operatorfunc=CommentOperator<CR>g@'                               },
-      { mode = 'v', lhs = 'gc',         rhs = ':<C-U>call CommentOperator(visualmode())<CR>'                          },
-    },
-  },
   BARBAR = {
     opts = { noremap = true, silent = true },
     keys = {

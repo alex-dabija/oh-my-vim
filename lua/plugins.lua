@@ -119,8 +119,8 @@ packer.startup(function(use)
   }
 
   use {
-    'terrortylor/nvim-comment',
-    config = function() require('plugins.nvim-comment').setup() end
+    'numToStr/Comment.nvim',
+    config = function() require('plugins.comment').setup() end
   }
 
   use {
