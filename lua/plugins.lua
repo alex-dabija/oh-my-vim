@@ -61,10 +61,7 @@ packer.startup(function(use)
     config = function() require('utils').set_colorscheme('tokyonight') end
   }
 
-  use {
-    'kyazdani42/nvim-tree.lua',
-    config = function() require('plugins.nvimtree').setup() end
-  }
+  use {'kyazdani42/nvim-tree.lua'}
 
   -- UI plugins
   use {
