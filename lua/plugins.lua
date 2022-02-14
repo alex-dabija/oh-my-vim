@@ -66,7 +66,9 @@ packer.startup(function(use)
   -- UI plugins
   use {
     'romgrk/barbar.nvim',
-    config = function() require('plugins.barbar').setup() end
+    config = function()
+      require('plugins.barbar').setup()
+    end
   }
 
   use {
