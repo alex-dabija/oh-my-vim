@@ -18,11 +18,6 @@ packer.startup(function(use)
     config = function() require('plugins.lsp-config').setup() end
   }
   use {
-    'glepnir/lspsaga.nvim',
-    config = function() require('plugins.lsp-saga').setup() end,
-    disable = true,
-  }
-  use {
     'kosayoda/nvim-lightbulb',
     config = function() require('plugins.nvim-lightbulb').setup() end
   }
