@@ -42,11 +42,7 @@ packer.startup(function(use)
   use {'L3MON4D3/LuaSnip'}
 
   -- Treesitter
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    config = function() require('plugins.treesitter').setup() end
-  }
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'nvim-treesitter/nvim-treesitter-refactor'}
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
   use {'nvim-treesitter/playground'}
