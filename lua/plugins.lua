@@ -97,6 +97,8 @@ packer.startup(function(use)
     'ojroques/vim-oscyank',
     config = function() require('plugins.oscyank').setup() end
   }
+
+  use {'AckslD/nvim-neoclip.lua'}
 end)
 
 
