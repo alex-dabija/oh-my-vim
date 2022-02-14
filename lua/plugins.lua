@@ -17,10 +17,7 @@ packer.startup(function(use)
     'neovim/nvim-lspconfig',
     config = function() require('plugins.lsp-config').setup() end
   }
-  use {
-    'kosayoda/nvim-lightbulb',
-    config = function() require('plugins.nvim-lightbulb').setup() end
-  }
+  use {'kosayoda/nvim-lightbulb'}
 
   -- Autocomplete
   use {'hrsh7th/nvim-cmp'}
