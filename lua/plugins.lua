@@ -15,9 +15,6 @@ packer.startup(function(use)
   -- LSP
   use {
     'neovim/nvim-lspconfig',
-    --'git@git.tools.kbee.xyz:opensource/vim/nvim-lspconfig.git',
-    as = 'nvim-lspconfig',
-    -- branch = 'fix-lsp-new-file',
     config = function() require('plugins.lsp-config').setup() end
   }
   use {
@@ -31,10 +28,7 @@ packer.startup(function(use)
   }
 
   -- Autocomplete
-  use {
-    'hrsh7th/nvim-cmp',
-    config = function() require('plugins.nvim-cmp').setup() end,
-  }
+  use {'hrsh7th/nvim-cmp'}
   use {'hrsh7th/cmp-nvim-lsp'}
 
   -- Snippets
