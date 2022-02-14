@@ -72,7 +72,6 @@ function M.setup()
     handlers = common_lsp_handlers(),
   }
 
-  local sumneko_root_path = vim.fn.stdpath('data') .. '/site/oh-my-vim/lua-language-server'
   lspconfig.sumneko_lua.setup {
     on_attach = configure_buffer,
     handlers = common_lsp_handlers(),
