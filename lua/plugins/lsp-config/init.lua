@@ -65,6 +65,10 @@ function M.setup()
     }
   end
 
+  local runtime_path = vim.split(package.path, ';')
+  table.insert(runtime_path, 'lua/?.lua')
+  table.insert(runtime_path, 'lua/?/init.lua')
+
   lspconfig.sumneko_lua.setup {
     on_attach = configure_buffer,
     handlers = common_lsp_handlers(),
@@ -72,14 +76,17 @@ function M.setup()
       Lua = {
         runtime = {
           version = 'LuaJIT',
-          path = vim.split(package.path, ';')
+          path = runtime_path,
         },
         diagnostics = {
           globals = {'vim'},
         },
         workspace = {
-          library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true},
+          library = vim.api.nvim_get_runtime_file('', true),
           maxPreload = 10000,
+        },
+        telemetry = {
+          enable = false,
         },
       },
     },
