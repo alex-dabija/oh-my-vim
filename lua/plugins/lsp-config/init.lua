@@ -57,11 +57,15 @@ function M.setup()
   virtual_text.setup()
   configure_diagnostic_signs()
 
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
   local servers = { 'rust_analyzer', 'gopls', 'pylsp', 'ansiblels' }
   for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
       on_attach = configure_buffer,
       handlers = common_lsp_handlers(),
+      capabilities = capabilities,
     }
   end
 
@@ -72,6 +76,7 @@ function M.setup()
   lspconfig.sumneko_lua.setup {
     on_attach = configure_buffer,
     handlers = common_lsp_handlers(),
+    capabilities = capabilities,
     settings = {
       Lua = {
         runtime = {
@@ -86,7 +91,6 @@ function M.setup()
           maxPreload = 10000,
         },
         telemetry = {
-          enable = false,
         },
       },
     },
