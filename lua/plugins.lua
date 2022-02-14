@@ -40,10 +40,7 @@ packer.startup(function(use)
   use {'nvim-treesitter/playground'}
 
   -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim',
-    config = function() require('plugins.telescope').setup() end
-  }
+  use {'nvim-telescope/telescope.nvim'}
   use {
     'TC72/telescope-tele-tabby.nvim',
     config = function() require('plugins.telescope-tele-tabby').setup() end
