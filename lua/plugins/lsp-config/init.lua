@@ -57,20 +57,13 @@ function M.setup()
   virtual_text.setup()
   configure_diagnostic_signs()
 
-  lspconfig.rust_analyzer.setup {
-    on_attach = configure_buffer,
-    handlers = common_lsp_handlers(),
-  }
-
-  lspconfig.gopls.setup {
-    on_attach = configure_buffer,
-    handlers = common_lsp_handlers(),
-  }
-
-  lspconfig.pylsp.setup {
-    on_attach = configure_buffer,
-    handlers = common_lsp_handlers(),
-  }
+  local servers = { 'rust_analyzer', 'gopls', 'pylsp', 'ansiblels' }
+  for _, lsp in ipairs(servers) do
+    lspconfig[lsp].setup {
+      on_attach = configure_buffer,
+      handlers = common_lsp_handlers(),
+    }
+  end
 
   lspconfig.sumneko_lua.setup {
     on_attach = configure_buffer,
@@ -90,11 +83,6 @@ function M.setup()
         },
       },
     },
-  }
-
-  lspconfig.ansiblels.setup {
-    on_attach = configure_buffer,
-    handlers = common_lsp_handlers(),
   }
 end
 
