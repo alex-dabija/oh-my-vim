@@ -25,10 +25,7 @@ end
 
 local function configure_buffer(client, bufnr)
   local buf = buffer.new(client, bufnr)
-
   virtual_text.on_attach(buf)
-
-  buf:set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
   buf:set_keymaps(keymaps.LSP)
 
   if client.resolved_capabilities.document_highlight then
