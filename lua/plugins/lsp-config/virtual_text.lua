@@ -20,14 +20,13 @@ end
 
 function M.toggle()
   enabled = not enabled
-  -- vim.diagnostic.show(nil, 0, vim.diagnostic.get(0, nil), {virtual_text = enabled})
   vim.diagnostic.show(nil, 0, nil, {virtual_text = enabled})
 end
 
 function M.on_publish_diagnostics(err, method, result, client_id, bufnr, config)
-  local config = config or {}
-  config.virtual_text = M.should_display()
-  vim.lsp.diagnostic.on_publish_diagnostics(err, method, result, client_id, bufnr, config)
+  local c = config or {}
+  c.virtual_text = M.should_display()
+  vim.lsp.diagnostic.on_publish_diagnostics(err, method, result, client_id, bufnr, c)
 end
 
 return M
