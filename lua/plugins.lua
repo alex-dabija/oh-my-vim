@@ -10,7 +10,13 @@ end
 
 local packer = require('packer')
 packer.startup(function(use)
+  -- Package manager
   use {'wbthomason/packer.nvim'}
+
+  -- Common
+  use {'nvim-lua/popup.nvim'}
+  use {'nvim-lua/plenary.nvim'}
+  use {'kyazdani42/nvim-web-devicons'}
 
   -- LSP
   use {
@@ -36,11 +42,6 @@ packer.startup(function(use)
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {
-      {'nvim-lua/popup.nvim'},
-      {'nvim-lua/plenary.nvim'},
-      {'kyazdani42/nvim-web-devicons'}
-    },
     config = function() require('plugins.telescope').setup() end
   }
   use {
@@ -74,18 +75,12 @@ packer.startup(function(use)
   -- UI plugins
   use {
     'romgrk/barbar.nvim',
-    requires = {
-      {'kyazdani42/nvim-web-devicons'}
-    },
     config = function() require('plugins.barbar').setup() end
   }
 
   use {
     'NTBBloodbath/galaxyline.nvim',
     branch = 'main',
-    requires = {
-      {'kyazdani42/nvim-web-devicons'},
-    },
     config = function() require('plugins.galaxyline').setup() end
   }
 
