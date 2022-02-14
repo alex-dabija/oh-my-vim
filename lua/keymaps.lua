@@ -81,6 +81,7 @@ local M = {
       { mode = 'n', lhs = '<Leader>ft', rhs = ':Telescope treesitter<CR>'                                             },
       { mode = 'n', lhs = '<Leader>fo', rhs = ':Telescope vim_options<CR>'                                            },
       { mode = 'n', lhs = '<Leader>fk', rhs = ':Telescope keymaps<CR>'                                                },
+      { mode = 'n', lhs = '<Leader>?',  rhs = [[<Cmd>lua require('telescope.builtin').oldfiles()<CR>]]                },
     },
   },
   NVIM_TREE = {
