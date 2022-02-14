@@ -82,10 +82,7 @@ packer.startup(function(use)
   use {'tpope/vim-rhubarb'}
   use {'lewis6991/gitsigns.nvim'}
 
-  use {
-    'numToStr/Comment.nvim',
-    config = function() require('plugins.comment').setup() end
-  }
+  use {'numToStr/Comment.nvim'}
 
   use {
     'norcalli/nvim-colorizer.lua',
