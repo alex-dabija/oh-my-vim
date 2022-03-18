@@ -20,3 +20,6 @@ require('session_manager').setup({
   autosave_only_in_session = false,
   max_path_length = 120,
 })
+
+local keymaps = require('keymaps')
+keymaps.set_keymaps(keymaps.NVIM_SESSION)

@@ -90,6 +90,13 @@ local M = {
       { mode = 'n', lhs = '<Leader>?',  rhs = [[<Cmd>lua require('telescope.builtin').oldfiles()<CR>]]                },
     },
   },
+  NVIM_SESSION = {
+    opts = { noremap = true, silent = true },
+    keys = {
+      { mode = 'n', lhs = '<Leader>sl', rhs = ':SessionManager load_session<CR>'                                      },
+      { mode = 'n', lhs = '<Leader>ss', rhs = ':SessionManager save_current_session<CR>'                              },
+    },
+  },
   NVIM_TREE = {
     opts = { noremap = true, silent = true },
     keys = {
