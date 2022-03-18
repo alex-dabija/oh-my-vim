@@ -59,10 +59,15 @@ packer.startup(function(use)
   --   config = function() require('utils').set_colorscheme('dracula') end
   -- }
 
+  -- use {
+  --   'folke/tokyonight.nvim',
+  --   after = 'galaxyline.nvim',
+  --   config = function() require('utils').set_colorscheme('tokyonight') end
+  -- }
   use {
-    'folke/tokyonight.nvim',
+    'EdenEast/nightfox.nvim',
     after = 'galaxyline.nvim',
-    config = function() require('utils').set_colorscheme('tokyonight') end
+    config = function() require('utils').set_colorscheme('nightfox') end
   }
 
   use {'kyazdani42/nvim-tree.lua'}
