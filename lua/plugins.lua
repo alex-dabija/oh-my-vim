@@ -44,6 +44,9 @@ packer.startup(function(use)
   use {'nvim-telescope/telescope-ui-select.nvim'}
   use {'TC72/telescope-tele-tabby.nvim'}
 
+  -- Session manager
+  use {'Shatur/neovim-session-manager'}
+
   -- Colorschemes
   -- use {
   --   'dracula/vim',
