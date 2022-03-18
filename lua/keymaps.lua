@@ -12,7 +12,7 @@ local M = {
       { mode = 'n', lhs = '<C-w>v',     rhs = ':vsplit<CR>'                                                           },
 
       -- Buffer keybindings
-      { mode = 'n', lhs = '<Leader>bd', rhs = ':BufferDelete<CR>'                                                     },
+      { mode = 'n', lhs = '<Leader>bd', rhs = ':BufferDelete!<CR>'                                                    },
 
       -- Vim tabs keybindings
       { mode = 'n', lhs = '<Leader>tn', rhs = ':tabnew<CR>'                                                           },
