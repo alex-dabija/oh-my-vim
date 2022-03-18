@@ -95,6 +95,7 @@ local M = {
     keys = {
       { mode = 'n', lhs = '<Leader>sl', rhs = ':SessionManager load_session<CR>'                                      },
       { mode = 'n', lhs = '<Leader>ss', rhs = ':SessionManager save_current_session<CR>'                              },
+      { mode = 'n', lhs = '<Leader>sd', rhs = ':SessionManager delete_session<CR>'                                    },
     },
   },
   NVIM_TREE = {
