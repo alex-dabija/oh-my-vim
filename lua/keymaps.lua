@@ -94,6 +94,8 @@ local M = {
     opts = { noremap = true, silent = true },
     keys = {
       { mode = 'n', lhs = '<Leader>tt',  rhs = ':NvimTreeToggle<CR>'                                                  },
+      { mode = 'n', lhs = '<Leader>tr',  rhs = ':NvimTreeRefresh<CR>'                                                 },
+      { mode = 'n', lhs = '<Leader>tn',  rhs = ':NvimTreeFindFile<CR>'                                                },
     },
   },
   VIRTUAL_TEXT = {
