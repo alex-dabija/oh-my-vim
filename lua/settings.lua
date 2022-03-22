@@ -53,11 +53,3 @@ vim.api.nvim_exec([[
     autocmd FileType * :lua require('filetypes').setup()
   augroup END
 ]], false)
-
-vim.api.nvim_exec([[
-  augroup session_load_nvim_tree
-    autocmd!
-    autocmd SessionLoadPost * :NvimTreeClose
-    autocmd SessionLoadPost * :NvimTreeOpen
-  augroup END
-]], false)
