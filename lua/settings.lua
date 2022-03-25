@@ -53,3 +53,10 @@ vim.api.nvim_exec([[
     autocmd FileType * :lua require('filetypes').setup()
   augroup END
 ]], false)
+
+vim.api.nvim_exec([[
+  augroup tridactyl_filetypes
+    autocmd!
+    autocmd BufNewFile,BufRead */tmp/tmp_github.com_*.txt :set filetype=markdown
+  augroup END
+]], false)
