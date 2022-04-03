@@ -14,7 +14,8 @@ require('nvim-treesitter.configs').setup {
     'markdown',
     'json',
     'yaml',
-    'html'
+    'html',
+    'nix',
   },
   highlight = {
     enable = true,
