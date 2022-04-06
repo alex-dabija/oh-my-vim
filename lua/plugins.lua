@@ -109,6 +109,11 @@ packer.startup(function(use)
 
   use {'AckslD/nvim-neoclip.lua'}
 
+  use {
+    'windwp/nvim-autopairs',
+    config = function() require('nvim-autopairs').setup() end
+  }
+
   -- use {
   --   'glacambre/firenvim',
   --   run = function() vim.fn['firenvim#install'](0) end
