@@ -109,6 +109,7 @@ packer.startup(function(use)
 
   use {'AckslD/nvim-neoclip.lua'}
 
+  use { 'tpope/vim-surround' }
   use {
     'windwp/nvim-autopairs',
     config = function() require('nvim-autopairs').setup() end
