@@ -4,7 +4,7 @@ return {
     rust_recommended_style = 0,
   },
   buffer_options = {
-    tabstop    = 2,
-    shiftwidth = 2,
+    tabstop    = 4,
+    shiftwidth = 4,
   }
 }
