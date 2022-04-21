@@ -24,7 +24,7 @@ local function configure_telescope_for_lsp(buf)
 end
 
 local function configure_buffer(client, bufnr)
-  local buf = buffer.new(client, bufnr)
+  local buf = buffer.new(bufnr)
   virtual_text.on_attach(buf)
   buf:set_keymaps(keymaps.LSP)
 
