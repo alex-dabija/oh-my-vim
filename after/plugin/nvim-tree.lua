@@ -2,11 +2,14 @@ if not pcall(require, 'nvim-tree') then
   return
 end
 
-vim.g.nvim_tree_indent_markers = 1
-
 require('nvim-tree').setup {
   view = {
     width = 70,
+  },
+  render = {
+    indent_markers = {
+      enable = true,
+    }
   },
   update_focused_file = {
     enable = true,
