@@ -27,13 +27,13 @@ local configs = setmetatable({}, {
 
 function actions:setup_autoformat_on_save()
   if self.autoformat_on_save then
-    local cmd = string.format([[
-      augroup ft_%s_format
-        autocmd!
-        autocmd BufWritePre *.%s :lua require('utils').lsp_format_file()
-      augroup END
-    ]], self.filetype, vim.fn.expand('%:e'))
-    vim.api.nvim_exec(cmd, false)
+    -- local cmd = string.format([[
+    --   augroup ft_%s_format
+    --     autocmd!
+    --     autocmd BufWritePre *.%s :lua require('utils').lsp_format_file()
+    --   augroup END
+    -- ]], self.filetype, vim.fn.expand('%:e'))
+    -- vim.api.nvim_exec(cmd, false)
   end
 end
 
