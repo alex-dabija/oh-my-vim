@@ -4,9 +4,12 @@ end
 
 vim.fn.sign_define('LightBulbSign', { text = 'ﯦ' })
 
-vim.api.nvim_exec([[
-  augroup lsb_nvim_lightbulb
-    autocmd!
-    autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb()
-  augroup END
-]], false)
+local group_name = 'lsb_nvim_lightbulb'
+vim.api.nvim_create_augroup(group_name, { clear = true })
+vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+  group = group_name,
+  pattern = '*',
+  callback = function()
+    require('nvim-lightbulb').update_lightbulb()
+  end
+})
