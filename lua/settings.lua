@@ -47,12 +47,15 @@ utils.set('splitright', true)
 -- highlight current line
 utils.set('cursorline', true)
 
-vim.api.nvim_exec([[
-  augroup ft_per_type_config
-    autocmd!
-    autocmd FileType * :lua require('filetypes').setup()
-  augroup END
-]], false)
+local group_file_type_config = "ft_per_type_config"
+vim.api.nvim_create_augroup(group_file_type_config, { clear = true })
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  group = group_file_type_config,
+  pattern = "*",
+  callback = function()
+    require('filetypes').setup()
+  end,
+})
 
 vim.api.nvim_exec([[
   augroup tridactyl_filetypes
