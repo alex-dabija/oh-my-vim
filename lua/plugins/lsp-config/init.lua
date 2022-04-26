@@ -17,6 +17,44 @@ local function configure_diagnostic_signs()
   configure_diagnostic_sign("LspDiagnosticsSignHint", "")
 end
 
+----------------------------------------------------------------------------------------------------------------------
+-- LSP reference highlighting
+local highlight_group_name = 'lsp_document_highlight'
+
+local function lsp_highlights_create_augroup()
+  vim.api.nvim_create_augroup(highlight_group_name, { clear = false })
+end
+
+local function lsp_highlights_configure()
+  local config = { cterm = { bold = true }, ctermbg = 'red', bg = '#464646' }
+  vim.api.nvim_set_hl(0, 'LspReferenceRead', config)
+  vim.api.nvim_set_hl(0, 'LspReferenceText', config)
+  vim.api.nvim_set_hl(0, 'LspReferenceWrite', config)
+end
+
+local function lsp_highlights_clear_autocmds(bufnr)
+  vim.api.nvim_clear_autocmds({ group = highlight_group_name, buffer = bufnr })
+end
+
+local function lsp_highlights_configure_autocmd(bufnr, event, callback)
+  vim.api.nvim_create_autocmd({ event }, {
+    group = highlight_group_name,
+    buffer = bufnr,
+    callback = callback,
+  })
+end
+
+local function lsp_highlights_configure_autocmds(bufnr)
+  lsp_highlights_configure_autocmd(bufnr, 'CursorHold', function()
+    vim.lsp.buf.document_highlight()
+  end)
+  lsp_highlights_configure_autocmd(bufnr, 'CursorMoved', function()
+    vim.lsp.buf.clear_references()
+  end)
+end
+
+----------------------------------------------------------------------------------------------------------------------
+
 local function configure_telescope_for_lsp(buf)
   if utils.is_telescope_available() then
     buf:set_keymaps(keymaps.LSP_TELESCOPE)
@@ -29,18 +67,9 @@ local function configure_buffer(client, bufnr)
   buf:set_keymaps(keymaps.LSP)
 
   if client.resolved_capabilities.document_highlight then
-    local config = { cterm = { bold = true }, ctermbg = 'red', bg = '#464646' }
-    vim.api.nvim_set_hl(0, 'LspReferenceRead', config)
-    vim.api.nvim_set_hl(0, 'LspReferenceText', config)
-    vim.api.nvim_set_hl(0, 'LspReferenceWrite', config)
-
-    vim.api.nvim_exec([[
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]], false)
+    lsp_highlights_configure()
+    lsp_highlights_clear_autocmds(bufnr)
+    lsp_highlights_configure_autocmds(bufnr)
   end
 
   configure_telescope_for_lsp(buf)
@@ -55,6 +84,7 @@ end
 function M.setup()
   virtual_text.setup()
   configure_diagnostic_signs()
+  lsp_highlights_create_augroup()
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
