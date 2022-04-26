@@ -11,7 +11,7 @@ local default_config = {
 local actions = {}
 
 local configs = setmetatable({}, {
-  __index = function(t, filetype)
+  __index = function(_, filetype)
     local config = {}
     local has_package, package = pcall(require, 'filetypes.' .. filetype)
     if has_package and package ~= nil then
