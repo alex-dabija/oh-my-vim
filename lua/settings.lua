@@ -57,9 +57,12 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
   end,
 })
 
-vim.api.nvim_exec([[
-  augroup tridactyl_filetypes
-    autocmd!
-    autocmd BufNewFile,BufRead */tmp/tmp_github.com_*.txt :set filetype=markdown
-  augroup END
-]], false)
+local group_tridactyl_files = 'tridactyl_files'
+vim.api.nvim_create_augroup(group_tridactyl_files, { clear = true })
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  group = group_tridactyl_files,
+  pattern = '*/tmp/tmp_github.com_*.txt',
+  callback = function()
+    vim.bo.filetype = 'markdown'
+  end
+})
