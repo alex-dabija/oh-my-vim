@@ -29,10 +29,12 @@ local function configure_buffer(client, bufnr)
   buf:set_keymaps(keymaps.LSP)
 
   if client.resolved_capabilities.document_highlight then
+    local config = { cterm = { bold = true }, ctermbg = 'red', bg = '#464646' }
+    vim.api.nvim_set_hl(0, 'LspReferenceRead', config)
+    vim.api.nvim_set_hl(0, 'LspReferenceText', config)
+    vim.api.nvim_set_hl(0, 'LspReferenceWrite', config)
+
     vim.api.nvim_exec([[
-      highlight LspReferenceRead cterm=bold ctermbg=red guibg=#464646
-      highlight LspReferenceText cterm=bold ctermbg=red guibg=#464646
-      highlight LspReferenceWrite cterm=bold ctermbg=red guibg=#464646
       augroup lsp_document_highlight
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
