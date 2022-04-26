@@ -47,11 +47,11 @@ utils.set('splitright', true)
 -- highlight current line
 utils.set('cursorline', true)
 
-local group_file_type_config = "ft_per_type_config"
+local group_file_type_config = 'ft_per_type_config'
 vim.api.nvim_create_augroup(group_file_type_config, { clear = true })
-vim.api.nvim_create_autocmd({ "FileType" }, {
+vim.api.nvim_create_autocmd({ 'FileType' }, {
   group = group_file_type_config,
-  pattern = "*",
+  pattern = '*',
   callback = function()
     require('filetypes').setup()
   end,

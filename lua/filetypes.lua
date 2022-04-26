@@ -27,11 +27,11 @@ local configs = setmetatable({}, {
 
 function actions:setup_autoformat_on_save()
   if self.autoformat_on_save then
-    local group_name = string.format("ft_%s_format", self.filetype)
+    local group_name = string.format('ft_%s_format', self.filetype)
     vim.api.nvim_create_augroup(group_name, { clear = true })
-    vim.api.nvim_create_autocmd({"BufWritePre"}, {
+    vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
       group = group_name,
-      pattern = {string.format("*.%s", vim.fn.expand('%:e'))},
+      pattern = {string.format('*.%s', vim.fn.expand('%:e'))},
       callback = function()
         require('utils').lsp_format_file()
       end,
