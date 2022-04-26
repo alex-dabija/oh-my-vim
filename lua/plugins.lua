@@ -61,12 +61,14 @@ packer.startup(function(use)
 
   use {
     'folke/tokyonight.nvim',
-    after = 'galaxyline.nvim',
+    after = 'lualine.nvim',
+    -- after = 'galaxyline.nvim',
     -- config = function() require('utils').set_colorscheme('tokyonight') end
   }
   use {
     'EdenEast/nightfox.nvim',
-    after = 'galaxyline.nvim',
+    after = 'lualine.nvim',
+    -- after = 'galaxyline.nvim',
     config = function() require('utils').set_colorscheme('nightfox') end
   }
 
@@ -80,10 +82,14 @@ packer.startup(function(use)
     end
   }
 
+  -- use {
+  --   'NTBBloodbath/galaxyline.nvim',
+  --   branch = 'main',
+  --   config = function() require('plugins.galaxyline').setup() end
+  -- }
   use {
-    'NTBBloodbath/galaxyline.nvim',
-    branch = 'main',
-    config = function() require('plugins.galaxyline').setup() end
+    'nvim-lualine/lualine.nvim',
+    config = function() require('plugins.lualine').setup() end
   }
 
   -- Git
