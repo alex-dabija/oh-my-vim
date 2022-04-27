@@ -126,6 +126,11 @@ packer.startup(function(use)
       require"octo".setup()
     end
   }
+
+  use {
+    'rcarriga/nvim-notify',
+    config = function() require('plugins.notify').setup() end,
+  }
 end)
 
 
