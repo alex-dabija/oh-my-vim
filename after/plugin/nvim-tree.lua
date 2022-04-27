@@ -6,7 +6,7 @@ require('nvim-tree').setup {
   view = {
     width = 70,
   },
-  render = {
+  renderer = {
     indent_markers = {
       enable = true,
     }
