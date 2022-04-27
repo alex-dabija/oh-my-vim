@@ -8,8 +8,6 @@ local icons = {
   dos            = '', -- e70f
   unix           = '', -- f17c
   mac            = '', -- f179
-  page           = '☰', -- 2630
-  line_number    = '', -- e0a1
   connected      = '', -- f817
   disconnected   = '', -- f818
   error          = '', -- f658
@@ -79,16 +77,7 @@ local lsp = {
   cond = hide_if_max_width,
 }
 
-local location = {
-  function()
-    local column = vim.fn.col('.')
-    local line_number = vim.fn.line('.')
-    local line_count = vim.fn.line('$')
-    local percent = math.floor(100 * line_number / line_count)
-    return string.format('%s%s:%s %s %s%s', icons.line_number, line_number, column, icons.page, percent, '%%')
-  end,
-}
-
+local location = require('plugins.lualine.components.location')
 local fileformat = require('plugins.lualine.components.fileformat')
 
 function M.setup()
