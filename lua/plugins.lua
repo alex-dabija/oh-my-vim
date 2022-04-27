@@ -131,6 +131,11 @@ packer.startup(function(use)
     'rcarriga/nvim-notify',
     config = function() require('plugins.notify').setup() end,
   }
+
+  use {
+    'mrjones2014/legendary.nvim',
+    config = function() require('plugins.legendary').setup() end,
+  }
 end)
 
 
