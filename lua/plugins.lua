@@ -53,22 +53,15 @@ packer.startup(function(use)
   --   as = 'dracula',
   --   config = function() require('utils').set_colorscheme('dracula') end
   -- }
-  -- use {
-  --   'christianchiarulli/nvcode-color-schemes.vim',
-  --   after = 'galaxyline.nvim',
-  --   config = function() require('utils').set_colorscheme('dracula') end
-  -- }
 
   use {
     'folke/tokyonight.nvim',
     after = 'lualine.nvim',
-    -- after = 'galaxyline.nvim',
     -- config = function() require('utils').set_colorscheme('tokyonight') end
   }
   use {
     'EdenEast/nightfox.nvim',
     after = 'lualine.nvim',
-    -- after = 'galaxyline.nvim',
     config = function() require('utils').set_colorscheme('nightfox') end
   }
 
@@ -82,11 +75,6 @@ packer.startup(function(use)
     end
   }
 
-  -- use {
-  --   'NTBBloodbath/galaxyline.nvim',
-  --   branch = 'main',
-  --   config = function() require('plugins.galaxyline').setup() end
-  -- }
   use {
     'nvim-lualine/lualine.nvim',
     requires = 'arkav/lualine-lsp-progress',
