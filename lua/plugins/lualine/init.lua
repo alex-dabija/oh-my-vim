@@ -1,7 +1,7 @@
 local M = {}
 
 local lsp = require('plugins.lualine.components.lsp')
-local diff = require('plugins.lualine.components.lsp')
+local diff = require('plugins.lualine.components.diff')
 local location = require('plugins.lualine.components.location')
 local fileformat = require('plugins.lualine.components.fileformat')
 local diagnostics = require('plugins.lualine.components.diagnostics')
