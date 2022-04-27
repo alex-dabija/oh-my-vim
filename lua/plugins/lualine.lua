@@ -9,7 +9,8 @@ function M.setup()
       lualine_c = {'lsp_progress'},
       lualine_x = {},
       lualine_y = {'encoding', 'fileformat', 'filetype'},
-      lualine_z = {'branch'},
+      lualine_z = {'branch', 'diff', 'diagnostics'},
+
     },
   }
 end
