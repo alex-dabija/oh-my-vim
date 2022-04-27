@@ -32,7 +32,12 @@ end
 local diagnostics = {
   'diagnostics',
   sources = { 'nvim_diagnostic' },
-  symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+  symbols = {
+    error = icons.error .. ' ',
+    warn = icons.warning .. ' ',
+    info = icons.info .. ' ',
+    hint = icons.hint .. ' ',
+  },
   cond = hide_if_max_width,
 }
 
