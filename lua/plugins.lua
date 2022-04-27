@@ -89,7 +89,11 @@ packer.startup(function(use)
   -- }
   use {
     'nvim-lualine/lualine.nvim',
+    requires = 'arkav/lualine-lsp-progress',
     config = function() require('plugins.lualine').setup() end
+  }
+  use {
+    'arkav/lualine-lsp-progress',
   }
 
   -- Git
