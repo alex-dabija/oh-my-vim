@@ -126,11 +126,6 @@ packer.startup(function(use)
       require"octo".setup()
     end
   }
-
-  -- use {
-  --   'glacambre/firenvim',
-  --   run = function() vim.fn['firenvim#install'](0) end
-  -- }
 end)
 
 
