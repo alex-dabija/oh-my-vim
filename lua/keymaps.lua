@@ -4,10 +4,10 @@ local M = {
     keys = {
       -- { mode = 'n', lhs = '<Leader>ve', rhs = ':edit $MYVIMRC<CR>'                                                    },
       -- { mode = 'n', lhs = '<Leader>vs', rhs = ':luafile $MYVIMRC<CR>'                                                 },
-      { mode = 'n', lhs = '<C-Up>',     rhs = ':resize -2<CR>'                                                        },
-      { mode = 'n', lhs = '<C-Down>',   rhs = ':resize +2<CR>'                                                        },
-      { mode = 'n', lhs = '<C-Left>',   rhs = ':vertical resize -2<CR>'                                               },
-      { mode = 'n', lhs = '<C-Right>',  rhs = ':vertical resize +2<CR>'                                               },
+      -- { mode = 'n', lhs = '<C-Up>',     rhs = ':resize -2<CR>'                                                        },
+      -- { mode = 'n', lhs = '<C-Down>',   rhs = ':resize +2<CR>'                                                        },
+      -- { mode = 'n', lhs = '<C-Left>',   rhs = ':vertical resize -2<CR>'                                               },
+      -- { mode = 'n', lhs = '<C-Right>',  rhs = ':vertical resize +2<CR>'                                               },
       { mode = 'n', lhs = '<C-w>s',     rhs = ':split<CR>'                                                            },
       { mode = 'n', lhs = '<C-w>v',     rhs = ':vsplit<CR>'                                                           },
 
