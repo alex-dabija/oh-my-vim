@@ -56,24 +56,6 @@ local diff = {
   cond = nil,
 }
 
--- local lsp = {
---   function()
---     local buf_clients = vim.lsp.buf_get_clients()
---     if next(buf_clients) == nil then
---       return '' .. icons.disconnected .. ''
---     end
---
---     local buf_client_names = {}
---     for _, client in pairs(buf_clients) do
---       table.insert(buf_client_names, client.name)
---     end
---
---     return icons.connected .. '  ' .. table.concat(buf_client_names, ', ')
---   end,
---   -- color = { gui = 'bold' },
---   cond = hide_if_max_width,
--- }
-
 local lsp = require('plugins.lualine.components.lsp')
 local location = require('plugins.lualine.components.location')
 local fileformat = require('plugins.lualine.components.fileformat')
@@ -81,7 +63,7 @@ local fileformat = require('plugins.lualine.components.fileformat')
 function M.setup()
   require('lualine').setup {
     options = {
-      icons_enabled = false,
+      icons_enabled = true,
     },
     extensions = { 'quickfix', 'nvim-tree' },
     sections = {
