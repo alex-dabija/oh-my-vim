@@ -53,7 +53,11 @@ local diff = {
       }
     end
   end,
-  symbols = { added = '  ', modified = ' ', removed = ' ' },
+  symbols = {
+    added = icons.git_add .. ' ',
+    modified = icons.git_modified .. ' ',
+    removed = icons.git_deleted .. ' ',
+  },
   cond = nil,
 }
 
@@ -75,6 +79,16 @@ local lsp = {
   cond = hide_if_max_width,
 }
 
+local location = {
+  function()
+    local column = vim.fn.col('.')
+    local line_number = vim.fn.line('.')
+    local line_count = vim.fn.line('$')
+    local percent = math.floor(100 * line_number / line_count)
+    return string.format('%s%s:%s %s %s%s', icons.line_number, line_number, column, icons.page, percent, '%%')
+  end,
+}
+
 function M.setup()
   require('lualine').setup {
     extensions = { 'quickfix', 'nvim-tree' },
@@ -84,7 +98,7 @@ function M.setup()
       lualine_c = { diff, 'lsp_progress' },
       lualine_x = { lsp, diagnostics },
       lualine_y = { 'encoding', 'fileformat', 'filetype' },
-      lualine_z = { 'location' },
+      lualine_z = { location },
     },
   }
 end
