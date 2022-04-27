@@ -36,27 +36,8 @@ local diagnostics = {
   cond = hide_if_max_width,
 }
 
-local diff = {
-  'diff',
-  source = function()
-    local gitsigns = vim.b.gitsigns_status_dict
-    if gitsigns then
-      return {
-        added = gitsigns.added,
-        modified = gitsigns.changed,
-        removed = gitsigns.removed,
-      }
-    end
-  end,
-  symbols = {
-    added = icons.git_add .. ' ',
-    modified = icons.git_modified .. ' ',
-    removed = icons.git_deleted .. ' ',
-  },
-  cond = nil,
-}
-
 local lsp = require('plugins.lualine.components.lsp')
+local diff = require('plugins.lualine.components.lsp')
 local location = require('plugins.lualine.components.location')
 local fileformat = require('plugins.lualine.components.fileformat')
 
