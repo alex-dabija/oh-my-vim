@@ -122,6 +122,19 @@ packer.startup(function(use)
     config = function() require('nvim-autopairs').setup() end
   }
 
+  -- Github PRs and issues management
+  use {
+    'pwntester/octo.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'kyazdani42/nvim-web-devicons',
+    },
+    config = function ()
+      require"octo".setup()
+    end
+  }
+
   -- use {
   --   'glacambre/firenvim',
   --   run = function() vim.fn['firenvim#install'](0) end
