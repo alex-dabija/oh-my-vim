@@ -89,6 +89,8 @@ local location = {
   end,
 }
 
+local fileformat = require('plugins.lualine.components.fileformat')
+
 function M.setup()
   require('lualine').setup {
     extensions = { 'quickfix', 'nvim-tree' },
@@ -97,7 +99,7 @@ function M.setup()
       lualine_b = { 'filename', 'branch' },
       lualine_c = { diff, 'lsp_progress' },
       lualine_x = { lsp, diagnostics },
-      lualine_y = { 'encoding', 'fileformat', 'filetype' },
+      lualine_y = { fileformat, 'filetype' },
       lualine_z = { location },
     },
   }
