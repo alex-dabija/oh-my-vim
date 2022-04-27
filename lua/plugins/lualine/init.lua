@@ -80,6 +80,9 @@ local fileformat = require('plugins.lualine.components.fileformat')
 
 function M.setup()
   require('lualine').setup {
+    options = {
+      icons_enabled = false,
+    },
     extensions = { 'quickfix', 'nvim-tree' },
     sections = {
       lualine_a = { 'mode'},
