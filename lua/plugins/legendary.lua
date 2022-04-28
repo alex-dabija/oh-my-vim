@@ -17,6 +17,9 @@ function M.setup()
       -- Window split bindings
       { '<C-w>s',    ':split<CR>',  description = 'Horizontal split', opts = opts },
       { '<C-w>v',    ':vsplit<CR>', description = 'Vertical split',   opts = opts },
+
+      -- Buffer bindings
+      { '<Leader>bd', ':BufferDelete!<CR>', description = 'Delete current buffer', opts = opts },
     }
   }
 end

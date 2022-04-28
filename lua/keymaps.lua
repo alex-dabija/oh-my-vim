@@ -2,12 +2,6 @@ local M = {
   GLOBAL = {
     opts = { noremap = true, silent = true },
     keys = {
-      -- { mode = 'n', lhs = '<C-w>s',     rhs = ':split<CR>'                                                            },
-      -- { mode = 'n', lhs = '<C-w>v',     rhs = ':vsplit<CR>'                                                           },
-
-      -- Buffer keybindings
-      { mode = 'n', lhs = '<Leader>bd', rhs = ':BufferDelete!<CR>'                                                    },
-
       -- Vim tabs keybindings
       { mode = 'n', lhs = '<Leader>tn', rhs = ':tabnew<CR>'                                                           },
       { mode = 'n', lhs = '<C-w>T',     rhs = ':tabedit %<CR>'                                                        },
