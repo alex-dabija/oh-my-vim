@@ -20,6 +20,12 @@ function M.setup()
 
       -- Buffer bindings
       { '<Leader>bd', ':BufferDelete!<CR>', description = 'Delete current buffer', opts = opts },
+
+      -- Neovim tabs bindings
+      { '<Leader>nt', ':tabnew<CR>',    description = 'New tab',                   opts = opts },
+      { '<C-w>T',     ':tabedit %<CR>', description = 'Current buffer in new tab', opts = opts },
+      { '<Leader>ct', ':tabclose<CR>',  description = 'Close current tab',         opts = opts },
+      { '<Leader>to', ':tabonly<CR>',   description = 'Keep only current tab',     opts = opts },
     }
   }
 end

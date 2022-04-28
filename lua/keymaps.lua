@@ -2,11 +2,6 @@ local M = {
   GLOBAL = {
     opts = { noremap = true, silent = true },
     keys = {
-      -- Vim tabs keybindings
-      { mode = 'n', lhs = '<Leader>tn', rhs = ':tabnew<CR>'                                                           },
-      { mode = 'n', lhs = '<C-w>T',     rhs = ':tabedit %<CR>'                                                        },
-      { mode = 'n', lhs = '<Leader>tc', rhs = ':tabclose<CR>'                                                         },
-      { mode = 'n', lhs = '<Leader>to', rhs = ':tabonly<CR>'                                                          },
 
       -- disable backspace and delete keys
       { mode = 'i', lhs = '<BS>',       rhs = '<Nop>'                                                                 },
