@@ -24,6 +24,11 @@ packer.startup(function(use)
     config = function() require('plugins.lsp-config').setup() end
   }
   use {'kosayoda/nvim-lightbulb'}
+  use {
+    'simrat39/rust-tools.nvim',
+    branch = 'modularize_and_inlay_rewrite',
+    config = function() require('plugins.rust-tools').setup() end
+  }
 
   -- Autocomplete
   use {'hrsh7th/nvim-cmp'}
