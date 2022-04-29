@@ -7,17 +7,11 @@ local M = {
       { mode = 'i', lhs = '<BS>',       rhs = '<Nop>'                                                                 },
       { mode = 'i', lhs = '<Del>',      rhs = '<Nop>'                                                                 },
 
-      -- terminal keybindings
-      -- { mode = 'n', lhs = '<Space>ts',  rhs = ':split term://zsh<CR>'                                                 },
-      -- { mode = 'n', lhs = '<Space>tv',  rhs = ':vsplit term://zsh<CR>'                                                },
-      -- { mode = 'n', lhs = '<Space>te',  rhs = ':edit term://zsh<CR>'                                                  },
-      -- { mode = 'n', lhs = '<Space>tt',  rhs = ':tabnew term://zsh<CR>'                                                },
-
       -- toggle hlsearch setting
-      { mode = 'n', lhs = '<Leader>th', rhs = ':lua vim.o.hlsearch = not vim.o.hlsearch<CR>'                          },
+      -- { mode = 'n', lhs = '<Leader>th', rhs = ':lua vim.o.hlsearch = not vim.o.hlsearch<CR>'                          },
 
       -- toggle US English language spell check
-      { mode = 'n', lhs = '<Leader>ts', rhs = ':lua vim.o.spell = not vim.o.spell; vim.o.spelllang = "en_us"<CR>'     },
+      -- { mode = 'n', lhs = '<Leader>ts', rhs = ':lua vim.o.spell = not vim.o.spell; vim.o.spelllang = "en_us"<CR>'     },
     },
   },
   GLOBAL_SILENT = {
