@@ -26,6 +26,12 @@ function M.setup()
       { '<C-w>T',     ':tabedit %<CR>', description = 'Current buffer in new tab', opts = opts },
       { '<Leader>ct', ':tabclose<CR>',  description = 'Close current tab',         opts = opts },
       { '<Leader>to', ':tabonly<CR>',   description = 'Keep only current tab',     opts = opts },
+
+      -- Terminal bindings
+      { '<Space>ts', ':split term://zsh<CR>',  description = 'New terminal in horizontal split', opts = opts },
+      { '<Space>tv', ':vsplit term://zsh<CR>', description = 'New terminal in vertical split',   opts = opts },
+      { '<Space>te', ':edit term://zsh<CR>',   description = 'New terminal in current window',   opts = opts },
+      { '<Space>tt', ':tabnew term://zsh<CR>', description = 'New terminal in new tab',          opts = opts },
     }
   }
 end

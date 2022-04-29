@@ -8,10 +8,10 @@ local M = {
       { mode = 'i', lhs = '<Del>',      rhs = '<Nop>'                                                                 },
 
       -- terminal keybindings
-      { mode = 'n', lhs = '<Space>ts',  rhs = ':split term://zsh<CR>'                                                 },
-      { mode = 'n', lhs = '<Space>tv',  rhs = ':vsplit term://zsh<CR>'                                                },
-      { mode = 'n', lhs = '<Space>te',  rhs = ':edit term://zsh<CR>'                                                  },
-      { mode = 'n', lhs = '<Space>tt',  rhs = ':tabnew term://zsh<CR>'                                                },
+      -- { mode = 'n', lhs = '<Space>ts',  rhs = ':split term://zsh<CR>'                                                 },
+      -- { mode = 'n', lhs = '<Space>tv',  rhs = ':vsplit term://zsh<CR>'                                                },
+      -- { mode = 'n', lhs = '<Space>te',  rhs = ':edit term://zsh<CR>'                                                  },
+      -- { mode = 'n', lhs = '<Space>tt',  rhs = ':tabnew term://zsh<CR>'                                                },
 
       -- toggle hlsearch setting
       { mode = 'n', lhs = '<Leader>th', rhs = ':lua vim.o.hlsearch = not vim.o.hlsearch<CR>'                          },
