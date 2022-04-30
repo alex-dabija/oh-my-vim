@@ -38,6 +38,10 @@ function M.setup()
       -- Toggle settings bindings
       { '<Leader>th', utils.toggle_hlsearch,         description = 'Toggle search highlighting', opts = opts },
       { '<Leader>ts', utils.toggle_en_spellchecking, description = 'Toggle EN spellchecking',    opts = opts },
+
+      -- Insert mode bindings
+      { '<BS>',  '<Nop>', mode = 'i', description = 'Disable backspace key in instert mode', opts = opts },
+      { '<Del>', '<Nop>', mode = 'i', description = 'Disable del key in insert mode',        opts = opts },
     }
   }
 end

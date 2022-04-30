@@ -1,12 +1,4 @@
 local M = {
-  GLOBAL = {
-    opts = { noremap = true, silent = true },
-    keys = {
-      -- disable backspace and delete keys
-      { mode = 'i', lhs = '<BS>',       rhs = '<Nop>'                                                                 },
-      { mode = 'i', lhs = '<Del>',      rhs = '<Nop>'                                                                 },
-    },
-  },
   GLOBAL_SILENT = {
     opts = { noremap = true, silent = false},
     keys = {
