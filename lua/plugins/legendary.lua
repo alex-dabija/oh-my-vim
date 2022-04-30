@@ -1,5 +1,7 @@
 local M = {}
 
+local utils = require('utils')
+
 function M.setup()
   local opts = { noremap = true, silent = true }
   require('legendary').setup {
@@ -32,6 +34,10 @@ function M.setup()
       { '<Space>tv', ':vsplit term://zsh<CR>', description = 'New terminal in vertical split',   opts = opts },
       { '<Space>te', ':edit term://zsh<CR>',   description = 'New terminal in current window',   opts = opts },
       { '<Space>tt', ':tabnew term://zsh<CR>', description = 'New terminal in new tab',          opts = opts },
+
+      -- Toggle settings bindings
+      { '<Leader>th', utils.toggle_hlsearch,         description = 'Toggle search highlighting', opts = opts },
+      { '<Leader>ts', utils.toggle_en_spellchecking, description = 'Toggle EN spellchecking',    opts = opts },
     }
   }
 end

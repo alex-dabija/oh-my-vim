@@ -2,16 +2,9 @@ local M = {
   GLOBAL = {
     opts = { noremap = true, silent = true },
     keys = {
-
       -- disable backspace and delete keys
       { mode = 'i', lhs = '<BS>',       rhs = '<Nop>'                                                                 },
       { mode = 'i', lhs = '<Del>',      rhs = '<Nop>'                                                                 },
-
-      -- toggle hlsearch setting
-      -- { mode = 'n', lhs = '<Leader>th', rhs = ':lua vim.o.hlsearch = not vim.o.hlsearch<CR>'                          },
-
-      -- toggle US English language spell check
-      -- { mode = 'n', lhs = '<Leader>ts', rhs = ':lua vim.o.spell = not vim.o.spell; vim.o.spelllang = "en_us"<CR>'     },
     },
   },
   GLOBAL_SILENT = {

@@ -131,4 +131,13 @@ function M.lsp_format_file()
   vim.lsp.buf.formatting_sync(nil, 1000)
 end
 
+function M.toggle_hlsearch()
+  vim.o.hlsearch = not vim.o.hlsearch
+end
+
+function M.toggle_en_spellchecking()
+  vim.o.spell = not vim.o.spell
+  vim.o.spelllang = "en_us"
+end
+
 return M
