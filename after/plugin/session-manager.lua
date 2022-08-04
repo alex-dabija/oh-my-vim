@@ -17,7 +17,7 @@ require('session_manager').setup({
   autosave_ignore_filetypes = {
     'gitcommit',
   },
-  autosave_only_in_session = false,
+  autosave_only_in_session = true,
   max_path_length = 120,
 })
 
