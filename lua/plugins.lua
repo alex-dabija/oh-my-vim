@@ -127,6 +127,7 @@ packer.startup(function(use)
       'nvim-telescope/telescope.nvim',
       'kyazdani42/nvim-web-devicons',
     },
+    commit = "ec31655dc960c7d06fbfa0928f896923ef646f8a",
     config = function ()
       require"octo".setup()
     end
