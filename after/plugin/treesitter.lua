@@ -3,20 +3,6 @@ if not pcall(require, 'nvim-treesitter') then
 end
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = {
-    'c',
-    'lua',
-    'rust',
-    'go',
-    'python',
-    'java',
-    'scala',
-    'markdown',
-    'json',
-    'yaml',
-    'html',
-    'nix',
-  },
   highlight = {
     enable = true,
   },
