@@ -143,11 +143,3 @@ packer.startup(function(use)
     config = function() require('plugins.legendary').setup() end,
   }
 end)
-
-
-local config = {
-  script_path = require('utils').script_path(),
-  checksum_path = require('packer.util').join_paths(vim.fn.stdpath('data'), 'site', 'oh-my-vim', 'plugins.lua.sha256'),
-  packer_script_path = packer.config.compile_path,
-}
-require('plugins.updater').update(config)
