@@ -16,11 +16,6 @@ packer.startup(function(use)
     config = function() require('plugins.lsp-config').setup() end
   }
 
-  use {
-    'windwp/nvim-autopairs',
-    config = function() require('nvim-autopairs').setup() end
-  }
-
   -- Github PRs and issues management
   use {
     'pwntester/octo.nvim',
