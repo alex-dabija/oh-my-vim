@@ -10,9 +10,6 @@ end
 
 local packer = require('packer')
 packer.startup(function(use)
-  -- Package manager
-  use {'wbthomason/packer.nvim'}
-
   -- LSP
   use {
     'neovim/nvim-lspconfig',
