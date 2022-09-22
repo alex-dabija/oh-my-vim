@@ -19,14 +19,6 @@ packer.startup(function(use)
     config = function() require('plugins.lsp-config').setup() end
   }
 
-  -- UI plugins
-  use {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require('colorizer').setup()
-    end,
-  }
-
   use {
     'windwp/nvim-autopairs',
     config = function() require('nvim-autopairs').setup() end
