@@ -44,11 +44,6 @@ packer.startup(function(use)
   }
 
   use {
-    'ojroques/vim-oscyank',
-    config = function() require('plugins.oscyank').setup() end
-  }
-
-  use {
     'windwp/nvim-autopairs',
     config = function() require('nvim-autopairs').setup() end
   }
