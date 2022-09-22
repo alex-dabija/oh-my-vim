@@ -10,11 +10,6 @@ end
 
 local packer = require('packer')
 packer.startup(function(use)
-  -- LSP
-  use {
-    'neovim/nvim-lspconfig',
-    config = function() require('plugins.lsp-config').setup() end
-  }
 
   -- Github PRs and issues management
   use {
