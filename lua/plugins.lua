@@ -37,9 +37,4 @@ packer.startup(function(use)
       require"octo".setup()
     end
   }
-
-  use {
-    'mrjones2014/legendary.nvim',
-    config = function() require('plugins.legendary').setup() end,
-  }
 end)
