@@ -1,4 +1,4 @@
-local utils = require('plugins.utils')
+local utils = require('utils')
 
 local opts = { noremap = true, silent = true }
 require('legendary').setup {
