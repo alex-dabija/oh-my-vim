@@ -29,7 +29,7 @@ local function configure_buffer(client, bufnr)
   virtual_text.on_attach(buf)
   buf:set_keymaps(keymaps.LSP)
 
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.document_highlight then
     lsp_highlights.configure_highlights()
     lsp_highlights.clear_autocmds(bufnr)
     lsp_highlights.configure_autocmds(bufnr)
