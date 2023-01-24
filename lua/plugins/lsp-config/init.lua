@@ -52,7 +52,7 @@ function M.setup()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-  local servers = { 'rust_analyzer', 'gopls', 'pylsp', 'ansiblels', 'jdtls' }
+  local servers = { 'gopls', 'pylsp', 'ansiblels', 'jdtls' }
   for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
       on_attach = configure_buffer,
