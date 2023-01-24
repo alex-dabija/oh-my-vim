@@ -2,7 +2,7 @@ local M = {}
 
 local utils = require('utils')
 local lspconfig = require('lspconfig')
-local virtual_text = require('plugins.lsp-config.virtual_text')
+-- local virtual_text = require('plugins.lsp-config.virtual_text')
 local buffer = require('plugins.lsp-config.buffer')
 local keymaps = require('keymaps')
 local lsp_highlights = require('plugins.lsp-config.lsp-highlights')
@@ -26,7 +26,7 @@ end
 
 local function configure_buffer(client, bufnr)
   local buf = buffer.new(bufnr)
-  virtual_text.on_attach(buf)
+  -- virtual_text.on_attach(buf)
   buf:set_keymaps(keymaps.LSP)
 
   if client.server_capabilities.document_highlight then
@@ -40,12 +40,12 @@ end
 
 local function common_lsp_handlers()
   return {
-    ["textDocument/publishDiagnostics"] = virtual_text.on_publish_diagnostics,
+    -- ["textDocument/publishDiagnostics"] = virtual_text.on_publish_diagnostics,
   }
 end
 
 function M.setup()
-  virtual_text.setup()
+  -- virtual_text.setup()
   configure_diagnostic_signs()
   lsp_highlights.create_augroup()
 
